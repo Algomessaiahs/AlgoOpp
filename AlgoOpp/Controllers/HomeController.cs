@@ -13,18 +13,18 @@ namespace AlgoOpp.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult College()
         {
-            ViewBag.Message = "Your application description page.";
+           
 
-            return View();
+            return RedirectToAction("Login","CollegeRegister");
         }
 
-        public ActionResult Contact()
+        public ActionResult Company()
         {
-            ViewBag.Message = "Your contact page.";
+           
 
-            return View();
+            return RedirectToAction("Login", "CompanyRegister");
         }
     }
 }
