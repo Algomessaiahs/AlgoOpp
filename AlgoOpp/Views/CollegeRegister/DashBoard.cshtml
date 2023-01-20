@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = null;
+    if (Session["EMAIL_ID"] == null)
+    {
+        Response.Redirect("~/CompanyRegister/Login");
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout_College.cshtml";
+    }
+
+}
+
+<h2>DashBoard</h2>
+

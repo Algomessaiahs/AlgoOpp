@@ -6,8 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-</head>
-<body>
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
 
         <div class="container-fluid">
@@ -19,18 +17,21 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <img class=".navbar-brand" src="~/Content/Logo.png" width="50px" height="50px" />
+                @*<img class=".navbar-brand" src="~/Content/Logo.png" width="50px" height="50px" />*@
 
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="color:black; float:right;">
-                    <li>@Html.ActionLink("College", "College", "Home")</li>
-                    <li>@Html.ActionLink("Company", "Company", "Home")</li>
-                   
+                    <li>@Html.ActionLink("Dashboard", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Companies", "Companies", "Home")</li>
+                    <li>@Html.ActionLink("Student Status", "CheckStatus", "Home")</li>
                 </ul>
             </div>
         </div>
     </div>
+</head>
+<body>
+   
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -44,3 +45,4 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+

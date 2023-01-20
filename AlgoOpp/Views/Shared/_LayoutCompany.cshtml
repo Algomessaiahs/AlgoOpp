@@ -23,10 +23,14 @@
 
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="color:black; float:right;">
-                    <li>@Html.ActionLink("College", "College", "Home")</li>
-                    <li>@Html.ActionLink("Company", "Company", "Home")</li>
-                   
+                <ul class="nav navbar-nav" style="color:blueviolet">
+                    <li>@Html.ActionLink("Dashboard", "DashBoard", "CompanyRegister")</li>
+                    <li>@Html.ActionLink("Recruitment", "Recruitment", "CompanyRegister")</li>
+                    <li>@Html.ActionLink("Notification", "Notification", "CompanyRegister")</li>
+                    <li>@Html.ActionLink("Check Status", "CheckStatus", "CompanyRegister")</li>
+                    @*<li>@Html.ActionLink("LogOut", "LogOut", "Home")</li>*@
+                    <li><a href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
+
                 </ul>
             </div>
         </div>
@@ -38,6 +42,7 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

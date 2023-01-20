@@ -21,14 +21,28 @@ namespace AlgoOpp.Controllers
         {
             using (var data = new TechathonDB_user11Entities2())
             {
-                bool isValid = data.COMPANY_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
-                if (isValid)
+                //bool isValid = data.COMPANY_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
+                //if (isValid)
+                //{
+                //    FormsAuthentication.SetAuthCookie(model.Email_id, false);
+                //    return RedirectToAction("DashBoard", "CompanyRegister");
+                //}
+                //ModelState.AddModelError("", "Invalid username or password");
+                //return View();
+                var UserDetail = data.COMPANY_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
+                if(UserDetail == null)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Email_id, false);
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("", "Invalid username or password");
+                    return View("Login" , model);
                 }
-                ModelState.AddModelError("", "Invalid username or password");
-                return View();
+                else
+                {
+                    Session["EMAIL_ID"] = model.Email_id;
+                    //var UserName = from r in data.COMPANY_DETAILS where 
+                    
+
+                    return RedirectToAction("DashBoard", "CompanyRegister");
+                }
             }
         }
         public ActionResult Register()
@@ -50,8 +64,30 @@ namespace AlgoOpp.Controllers
 
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Login");
+            //FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Login", "CompanyRegister");
         }
+        public ActionResult DashBoard()
+        {
+            
+            return View();
+        }
+        public ActionResult Recruitment()
+        {
+
+            return View();
+        }
+        public ActionResult Notification()
+        {
+
+            return View();
+        }
+        public ActionResult CheckStatus()
+        {
+
+            return View();
+        }
+
     }
 }
