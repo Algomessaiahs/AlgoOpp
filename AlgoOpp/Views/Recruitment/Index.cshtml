@@ -1,0 +1,115 @@
+﻿@model IEnumerable<AlgoOpp.Models.RECRUITMENT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+    if (Session["EMAIL_ID"] == null)
+    {
+        Response.Redirect("~/CompanyRegister/Login");
+    }
+    else
+    {
+        Layout = "~/Views/Shared/Layout_Company.cshtml";
+    }
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOB_LOCATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKILLS_REQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOB_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQ_CGPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MODIFIED_BY)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.POSITION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JOB_LOCATION)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SKILLS_REQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JOB_DESC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REQ_CGPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATED_BY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_DATE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MODIFIED_BY)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RECRUIT_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RECRUIT_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RECRUIT_ID })
+        </td>
+    </tr>
+}
+
+</table>
+<style>
+                table {
+                        border: solid 2px azure;
+
+    }
+
+                 th {
+                        border: solid 2px azure;
+                        background-color: black;
+                        color: aliceblue;
+
+    }
+
+                 td {
+                        border: solid 2px azure;
+                        background-color:darkslategray;
+                        color: azure;
+
+    }
+
+                 a:link {
+                        text-decoration: none;
+
+    }
+</style>

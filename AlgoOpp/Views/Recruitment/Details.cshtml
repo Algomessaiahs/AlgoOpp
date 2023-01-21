@@ -1,0 +1,90 @@
+﻿@model AlgoOpp.Models.RECRUITMENT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RECRUITMENT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.POSITION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JOB_LOCATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JOB_LOCATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SKILLS_REQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SKILLS_REQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.JOB_DESC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.JOB_DESC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.REQ_CGPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.REQ_CGPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CREATED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CREATED_BY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_DATE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_DATE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MODIFIED_BY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MODIFIED_BY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RECRUIT_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

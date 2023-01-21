@@ -20,29 +20,29 @@ namespace AlgoOpp.Controllers
         {
             using (var data = new TechathonDB_user11Entities())
             {
-                bool isValid = data.COLLEGE_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
-                if (isValid)
+                //bool isValid = data.COLLEGE_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
+                //if (isValid)
+                //{
+                //    FormsAuthentication.SetAuthCookie(model.Email_id, false);
+                //    return RedirectToAction("Index", "Home");
+                //}
+                //ModelState.AddModelError("", "Invalid username or password");
+                //return View();
+
+                var UserDetail = data.COLLEGE_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
+                if (UserDetail == null)
                 {
-                    FormsAuthentication.SetAuthCookie(model.Email_id, false);
-                    return RedirectToAction("Index", "Home");
+                    ModelState.AddModelError("", "Invalid username or password");
+                    return View("Login", model);
                 }
-                ModelState.AddModelError("", "Invalid username or password");
-                return View();
-
-                //var UserDetail = data.COLLEGE_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
-                //if (UserDetail == null)
-                //{
-                //    ModelState.AddModelError("", "Invalid username or password");
-                //    return View("Login", model);
-                //}
-                //else
-                //{
-                //    Session["EMAIL_ID"] = model.Email_id;
-                //    //var UserName = from r in data.COMPANY_DETAILS where 
+                else
+                {
+                    Session["EMAIL_ID"] = model.Email_id;
+                    //var UserName = from r in data.COMPANY_DETAILS where 
 
 
-                //    return RedirectToAction("DashBoard", "CollegeRegister");
-                //}
+                    return RedirectToAction("DashBoard", "CollegeRegister");
+                }
             }
         }
         public ActionResult Register()
@@ -62,19 +62,20 @@ namespace AlgoOpp.Controllers
         }
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-            return RedirectToAction("Login");
+            //FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Login","CollegeRegister");
         }
 
         public ActionResult DashBoard()
         {
             return View();
         }
-        public ActionResult Recrutiment()
+        public ActionResult StudentDetails()
         {
             return View();
         }
-        public ActionResult StudentDetails()
+        public ActionResult Companies()
         {
             return View();
         }

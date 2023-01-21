@@ -10,7 +10,7 @@
         <div class="container-fluid">
 
             <div class="form-horizontal">
-                <h4>Login</h4>
+                <h4>COLLEGE LOGIN</h4>
                 <hr />
 
                 <form autocomplete="off">
@@ -33,12 +33,13 @@
                         </div>
                     </div>
                     <br />
-                    <div class="form-group">
+                    <div class="">
                         <div>
-                            @*<button type="submit" value="Login" class="btn btn-primary">Login</button>*@
-                            <input type="submit" value="Login" class="btn btn-default" />
-                            @*<button class="btn btn-danger">@Html.ActionLink("For New Registeration", "Register" })</button>*@
-                            <button class="btn btn-danger"><a style="text-decoration:none; color:white;" href="~/CollegeRegister/Register">For New Registeration </a></button>
+                            <button type="submit" value="Login" class="btn btn-primary">Login</button><br />
+                            <hr />
+                            <p style="color: cadetblue; font-size: larger; ">
+                                For New Users<a style="text-decoration:none; color:white; font-size:larger; font:700;" href="~/CollegeRegister/Register"> Click here..!</a>
+                            </p>
 
                         </div>
                     </div>
@@ -96,23 +97,13 @@
             color: #fff;
         }
 
-        .btn-danger {
-            float: right;
-            text-decoration: none;
-            width: fit-content;
-            height: fit-content;
-            padding: 10px;
-            font-weight: 700;
-            margin-right: 50px;
-        }
 
         .btn-primary {
-            float: left;
-            width: fit-content;
+            /* float: left;*/
+            width: 200px;
             height: fit-content;
             padding: 10px;
             font-weight: 700;
-            margin-left: 50px;
             padding-left: 25px;
             padding-right: 25px;
         }

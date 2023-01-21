@@ -14,16 +14,16 @@
         <div class="container-fluid">
 
             <div class="form-horizontal">
-                <h4>Login</h4>
+                <h4>COMPANY LOGIN</h4>
                 <hr />
 
                 <form autocomplete="off">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                     <div class="form-group">
-                        <!--@Html.LabelFor(model => model.Email_id, htmlAttributes: new { @class = "control-label col-md-2" })-->
+                       
                         @*<label class="label">Email Id :</label>*@
                         <div class="">
-                            @Html.EditorFor(model => model.Email_id, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Email_id, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Email ID" } })
                             @Html.ValidationMessageFor(model => model.Email_id, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -32,17 +32,17 @@
                         @*@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })*@
                         @*<label class="label">Password : </label>*@
                         <div class="">
-                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Password" } })
                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                         </div>
                     </div>
                     <br />
-                    <div class="form-group">
+                    <div class="">
                         <div>
-                            @*<button type="submit" value="Login" class="btn btn-primary">Login</button>*@
-                            <input type="submit" value="Login" class="btn btn-default" />
-                            @*<button class="btn btn-danger">@Html.ActionLink("For New Registeration", "Register" })</button>*@
-                            <button class="btn btn-danger"><a style="text-decoration:none; color:white;" href="~/CollegeRegister/Register">For New Registeration </a></button>
+                            <button type="submit" value="Login" class="btn btn-primary">Login</button><br />
+                            <hr />
+                            <p style="color: cadetblue; font-size: larger; ">For New Users<a style="text-decoration:none; color:white; font-size:larger; font:700;" href="~/CompanyRegister/Register"> Click here..!</a>
+                            </p>
 
                         </div>
                     </div>
@@ -100,7 +100,7 @@
             color: #fff;
         }
 
-        .btn-danger {
+       /* .btn-danger {
             float: right;
             text-decoration: none;
             width: fit-content;
@@ -108,15 +108,14 @@
             padding: 10px;
             font-weight: 700;
             margin-right: 50px;
-        }
+        }*/
 
         .btn-primary {
-            float: left;
-            width: fit-content;
+            /* float: left;*/
+            width: 200px;
             height: fit-content;
             padding: 10px;
             font-weight: 700;
-            margin-left: 50px;
             padding-left: 25px;
             padding-right: 25px;
         }

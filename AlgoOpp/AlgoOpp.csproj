@@ -129,8 +129,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CompanyRegisterController.cs" />
-    <Compile Include="Controllers\CollegeRegisterController.cs" />
+    <Compile Include="Controllers\Company\CompanyRegisterController.cs" />
+    <Compile Include="Controllers\College\CollegeRegisterController.cs" />
+    <Compile Include="Controllers\Company\RecruitmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,7 +248,7 @@
     <Content Include="Views\CollegeRegister\Login.cshtml" />
     <Content Include="Views\CollegeRegister\Register.cshtml" />
     <Content Include="Views\Shared\Layout_College.cshtml" />
-    <Content Include="Views\Shared\_LayoutCompany.cshtml" />
+    <Content Include="Views\Shared\Layout_Company.cshtml" />
     <Content Include="Views\CompanyRegister\DashBoard.cshtml" />
     <Content Include="Views\CompanyRegister\Recruitment.cshtml" />
     <Content Include="Views\CompanyRegister\Notification.cshtml" />
@@ -255,6 +256,13 @@
     <Content Include="Views\CollegeRegister\DashBoard.cshtml" />
     <Content Include="Views\CollegeRegister\Recrutiment.cshtml" />
     <Content Include="Views\CollegeRegister\StudentDetails.cshtml" />
+    <Content Include="Views\Recruitment\Create.cshtml" />
+    <Content Include="Views\Recruitment\Delete.cshtml" />
+    <Content Include="Views\Recruitment\Details.cshtml" />
+    <Content Include="Views\Recruitment\Edit.cshtml" />
+    <Content Include="Views\Recruitment\Index.cshtml" />
+    <Content Include="Views\CollegeRegister\Companies.cshtml" />
+    <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

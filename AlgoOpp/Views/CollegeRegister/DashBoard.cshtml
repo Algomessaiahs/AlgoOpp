@@ -4,11 +4,11 @@
     Layout = null;
     if (Session["EMAIL_ID"] == null)
     {
-        Response.Redirect("~/CompanyRegister/Login");
+        Response.Redirect("~/CollegeRegister/Login");
     }
     else
     {
-        Layout = "~/Views/Shared/_Layout_College.cshtml";
+        Layout = "~/Views/Shared/Layout_College.cshtml";
     }
 
 }

@@ -1,8 +1,16 @@
 ﻿
-@{
+@*@{
     ViewBag.Title = "Recrutiment";
-    Layout = "~/Views/Shared/_Layout_College.cshtml";
+    Layout = null;
+    if (Session["EMAIL_ID"] == null)
+    {
+        Response.Redirect("~/CollegeRegister/Login");
+    }
+    else
+    {
+        Layout = "~/Views/Shared/Layout_College.cshtml";
+    }
 }
 
-<h2>Recrutiment</h2>
+<h2>Recrutiment</h2>*@
 
