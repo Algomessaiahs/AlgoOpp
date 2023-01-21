@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\College\StudentDetailsController.cs" />
     <Compile Include="Controllers\Company\CompanyRegisterController.cs" />
     <Compile Include="Controllers\College\CollegeRegisterController.cs" />
     <Compile Include="Controllers\Company\RecruitmentController.cs" />
@@ -173,6 +174,24 @@
       <DependentUpon>Company.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\STUDENT_DETAILS.cs">
+      <DependentUpon>StuModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StuModel1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StuModel1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StuModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StuModel1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +223,16 @@
       <DependentUpon>Company.edmx</DependentUpon>
       <LastGenOutput>Company.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\StuModel1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StuModel1.edmx</DependentUpon>
+      <LastGenOutput>StuModel1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StuModel1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StuModel1.edmx</DependentUpon>
+      <LastGenOutput>StuModel1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Company.edmx">
@@ -219,6 +248,13 @@
     </EntityDeploy>
     <Content Include="Models\College.edmx.diagram">
       <DependentUpon>College.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StuModel1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StuModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StuModel1.edmx.diagram">
+      <DependentUpon>StuModel1.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -263,6 +299,11 @@
     <Content Include="Views\Recruitment\Index.cshtml" />
     <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
+    <Content Include="Views\StudentDetails\Create.cshtml" />
+    <Content Include="Views\StudentDetails\Delete.cshtml" />
+    <Content Include="Views\StudentDetails\Details.cshtml" />
+    <Content Include="Views\StudentDetails\Edit.cshtml" />
+    <Content Include="Views\StudentDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
