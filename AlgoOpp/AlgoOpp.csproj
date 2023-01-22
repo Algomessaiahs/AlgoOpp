@@ -339,6 +339,8 @@
     <Content Include="Views\StudentDetails\Details.cshtml" />
     <Content Include="Views\StudentDetails\Edit.cshtml" />
     <Content Include="Views\StudentDetails\Index.cshtml" />
+    <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

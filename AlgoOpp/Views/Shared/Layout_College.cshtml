@@ -42,6 +42,12 @@
                     <li>@Html.ActionLink("Companies", "Companies", "CollegeRegister")</li>
                     <li>@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
                     <li><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
+                    <li class="dropdown">
+                        <a class=" dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:;">notifcation</a>
+                        @{ Html.RenderAction("Notification", "CollegeRegister"); }
+                    </li>
+
+                    <li><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
 
                 </ul>
             </div>

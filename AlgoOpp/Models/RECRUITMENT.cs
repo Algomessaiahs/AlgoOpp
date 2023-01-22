@@ -14,16 +14,18 @@ namespace AlgoOpp.Models
     
     public partial class RECRUITMENT
     {
-        public int RECRUIT_ID { get; set; }
-        public string POSITION { get; set; }
-        public string JOB_LOCATION { get; set; }
-        public string SKILLS_REQ { get; set; }
-        public string JOB_DESC { get; set; }
-        public Nullable<decimal> REQ_CGPA { get; set; }
-        public Nullable<System.DateTime> CREATED_DATE { get; set; }
-        public string CREATED_BY { get; set; }
-        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
-        public string MODIFIED_BY { get; set; }
-        public Nullable<int> EST_ID { get; set; }
+       
+            public int RECRUIT_ID { get; set; }
+            public string POSITION { get; set; }
+            public string JOB_LOCATION { get; set; }
+            public string SKILLS_REQ { get; set; }
+            public string JOB_DESC { get; set; }
+            public Nullable<decimal> REQ_CGPA { get; set; }
+            public Nullable<System.DateTime> CREATED_DATE { get; set; }
+            public string CREATED_BY { get; set; }
+            public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+            public string MODIFIED_BY { get; set; }
+            public Nullable<int> EST_ID { get; set; }
+        }
     }
-}
+

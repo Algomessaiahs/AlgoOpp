@@ -87,5 +87,10 @@ namespace AlgoOpp.Controllers
         {
             return View();
         }
+        [ChildActionOnly]
+        public ActionResult Notification()
+        {
+            return PartialView("_Notification");
+        }
     }
 }
