@@ -174,6 +174,24 @@
       <DependentUpon>Company.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\Recruitment.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECRUITMENT.cs">
+      <DependentUpon>Recruitment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recruitment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recruitment1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\STUDENT_DETAILS.cs">
       <DependentUpon>StuModel1.tt</DependentUpon>
     </Compile>
@@ -223,6 +241,16 @@
       <DependentUpon>Company.edmx</DependentUpon>
       <LastGenOutput>Company.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Recruitment.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+      <LastGenOutput>Recruitment.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Recruitment.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+      <LastGenOutput>Recruitment1.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\StuModel1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StuModel1.edmx</DependentUpon>
@@ -255,6 +283,13 @@
     </EntityDeploy>
     <Content Include="Models\StuModel1.edmx.diagram">
       <DependentUpon>StuModel1.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Recruitment.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Recruitment.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Recruitment.edmx.diagram">
+      <DependentUpon>Recruitment.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

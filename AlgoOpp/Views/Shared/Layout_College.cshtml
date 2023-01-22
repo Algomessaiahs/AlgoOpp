@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+
+    var session = (AlgoOpp.Models.Membership)Session["model"];
+    if (session==null)
+    {
+        Response.Redirect("~/CollegeRegister/Login");
+    }
+    if (string.Compare(session?.Est_Type , "Company",true)==0)
+    {
+        Response.Redirect("~/CompanyRegister/Login"); 
+    }
+
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -6,6 +20,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
 
         <div class="container-fluid">
@@ -23,7 +38,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="color:black; float:right;">
                     <li>@Html.ActionLink("Dashboard", "Index", "CollegeRegister")</li>
-                    <li>@Html.ActionLink("Student Details","Index","StudentDetails")</li>
+                    <li>@Html.ActionLink("Student Details", "Index", "StudentDetails")</li>
                     <li>@Html.ActionLink("Companies", "Companies", "CollegeRegister")</li>
                     <li>@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
                     <li><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
@@ -34,7 +49,7 @@
     </div>
 </head>
 <body>
-   
+
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -2,15 +2,6 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = null;
-    if (Session["EMAIL_ID"] == null)
-    {
-        Response.Redirect("~/CompanyRegister/Login");
-    }
-    else
-    {
-        Layout = "~/Views/Shared/Layout_Company.cshtml";
-    }
 }
 
 <h2>Index</h2>
@@ -47,6 +38,9 @@
         <th>
             @Html.DisplayNameFor(model => model.MODIFIED_BY)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EST_ID)
+        </th>
         <th></th>
     </tr>
 
@@ -80,6 +74,9 @@
             @Html.DisplayFor(modelItem => item.MODIFIED_BY)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.EST_ID)
+        </td>
+        <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.RECRUIT_ID }) |
             @Html.ActionLink("Details", "Details", new { id=item.RECRUIT_ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.RECRUIT_ID })
@@ -88,28 +85,3 @@
 }
 
 </table>
-<style>
-                table {
-                        border: solid 2px azure;
-
-    }
-
-                 th {
-                        border: solid 2px azure;
-                        background-color: black;
-                        color: aliceblue;
-
-    }
-
-                 td {
-                        border: solid 2px azure;
-                        background-color:darkslategray;
-                        color: azure;
-
-    }
-
-                 a:link {
-                        text-decoration: none;
-
-    }
-</style>

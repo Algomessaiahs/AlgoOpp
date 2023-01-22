@@ -19,8 +19,15 @@
 
                 <form autocomplete="off">
                     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group hidden">
+                        <!--@Html.LabelFor(model => model.Est_Type, htmlAttributes: new { @class = "control-label col-md-2" })-->
+                        @*<label class="label">Email Id :</label>*@
+                        <div class="">
+                            @Html.TextBoxFor(model => model.Est_Type, new { @class = "form-control", @Value = "Company" })
+                        </div>
+                    </div>
                     <div class="form-group">
-                       
+
                         @*<label class="label">Email Id :</label>*@
                         <div class="">
                             @Html.EditorFor(model => model.Email_id, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Email ID" } })
@@ -41,7 +48,8 @@
                         <div>
                             <button type="submit" value="Login" class="btn btn-primary">Login</button><br />
                             <hr />
-                            <p style="color: cadetblue; font-size: larger; ">For New Users<a style="text-decoration:none; color:white; font-size:larger; font:700;" href="~/CompanyRegister/Register"> Click here..!</a>
+                            <p style="color: cadetblue; font-size: larger; ">
+                                For New Users<a style="text-decoration:none; color:white; font-size:larger; font:700;" href="~/CompanyRegister/Register"> Click here..!</a>
                             </p>
 
                         </div>

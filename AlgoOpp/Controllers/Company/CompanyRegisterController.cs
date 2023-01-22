@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using AlgoOpp.Models;
+using Membership = AlgoOpp.Models.Membership;
 
 namespace AlgoOpp.Controllers
 {
@@ -14,6 +14,7 @@ namespace AlgoOpp.Controllers
         // GET: Account
         public ActionResult Login()
         {
+            Session.Abandon();
             return View();
         }
         [HttpPost]
@@ -29,20 +30,21 @@ namespace AlgoOpp.Controllers
                 //}
                 //ModelState.AddModelError("", "Invalid username or password");
                 //return View();
-                var UserDetail = data.COMPANY_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
-                if(UserDetail == null)
+                var UserDetail = data.COMPANY_DETAILS.Where(x => x.EST_TYPE == model.Est_Type && x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password ).FirstOrDefault();
+                if (UserDetail == null)
                 {
                     ModelState.AddModelError("", "Invalid username or password");
-                    return View("Login" , model);
+                    return View("Login", model);
                 }
                 else
                 {
-                    Session["EMAIL_ID"] = model.Email_id;
-                    //var UserName = from r in data.COMPANY_DETAILS where 
-                    
+                    Session["model"] = model;
+                    //Session["EST_TYPE"] = model.Est_Type;
+                    //Session["EMAIL_ID"] = model.Email_id;
 
-                    return RedirectToAction("DashBoard", "CompanyRegister");
+                    return RedirectToAction("DashBoard"/*, "CompanyRegister"*/);
                 }
+                
             }
         }
         public ActionResult Register()

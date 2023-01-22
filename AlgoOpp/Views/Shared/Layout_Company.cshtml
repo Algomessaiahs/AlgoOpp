@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+
+    var session = (AlgoOpp.Models.Membership)Session["model"];
+    if (session == null)
+    {
+        Response.Redirect("~/CompanyRegister/Login");
+    }
+    
+    if (string.Compare(session?.Est_Type, "College", true) == 0)
+    {
+        Response.Redirect("~/CollegeRegister/Login");
+    }
+
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />

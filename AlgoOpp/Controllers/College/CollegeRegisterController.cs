@@ -13,6 +13,7 @@ namespace AlgoOpp.Controllers
         // GET: CollegeRegister
         public ActionResult Login()
         {
+            Session.Abandon();
             return View();
         }
         [HttpPost]
@@ -29,7 +30,7 @@ namespace AlgoOpp.Controllers
                 //ModelState.AddModelError("", "Invalid username or password");
                 //return View();
 
-                var UserDetail = data.COLLEGE_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
+                var UserDetail = data.COLLEGE_DETAILS.Where(x => x.EST_TYPE == model.Est_Type && x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password ).FirstOrDefault();
                 if (UserDetail == null)
                 {
                     ModelState.AddModelError("", "Invalid username or password");
@@ -37,10 +38,13 @@ namespace AlgoOpp.Controllers
                 }
                 else
                 {
-                    Session["EMAIL_ID"] = model.Email_id;
+                    
+                    Session["model"] = model;
+                    //Session["EST_TYPE"] = model.Est_Type;
+                    //Session["EMAIL_ID"] = model.Email_id;
                     //var UserName = from r in data.COMPANY_DETAILS where 
 
-
+                   
                     return RedirectToAction("DashBoard", "CollegeRegister");
                 }
             }
