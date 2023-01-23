@@ -17,6 +17,7 @@ namespace AlgoOpp.Controllers.Company
     {
         private TechathonDB_user11Entities1 db = new TechathonDB_user11Entities1();
         private TechathonDB_user11Model2 db2 = new TechathonDB_user11Model2();
+        private TechathonDB_user11Entities3 db3 = new TechathonDB_user11Entities3();
 
         private Nullable<System.DateTime> created_date;
         // GET: Recruitment
@@ -154,12 +155,32 @@ namespace AlgoOpp.Controllers.Company
             base.Dispose(disposing);
         }
 
-        [HttpPost]
-        public ActionResult Send()
+       
+        public ActionResult Send(RECRUIT_APP_STATUS_CL recruit,int id)
         {
+            var data = db.RECRUITMENTs.FirstOrDefault(x => x.RECRUIT_ID == id);
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data3 = session.Email_id;
+            var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data3.ToString());
+            if (data!=null)
+            {
+                          
+                 recruit.RECRUIT_ID = data.RECRUIT_ID;
+                 recruit.EST_ID = data.EST_ID;
+                 recruit.EST_NAME = data.CREATED_BY;
+                 recruit.POSITION = data.POSITION;
+                 recruit.JOB_LOCATION = data.JOB_LOCATION;
+                 recruit.SKILLS_REQ = data.SKILLS_REQ;
+                 recruit.CREATED_DATE = data.CREATED_DATE;
+                 recruit.EST_NAME = data2.EST_NAME;
+                 recruit.JOB_DESC = data.JOB_DESC;
+                 recruit.REQ_CGPA = data.REQ_CGPA;
 
+                db3.RECRUIT_APP_STATUS_CL.Add(recruit);
+                db3.SaveChanges();
 
-            return View("Index");
+            }
+            return View();
         }
     }
 }

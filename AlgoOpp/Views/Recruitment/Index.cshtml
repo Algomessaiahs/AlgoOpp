@@ -81,6 +81,9 @@
             @Html.ActionLink("Details", "Details", new { id=item.RECRUIT_ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.RECRUIT_ID })
         </td>
+        <td>
+            @Html.ActionLink("Send", "Send", new { id = item.RECRUIT_ID })
+        </td>
     </tr>
 }
 

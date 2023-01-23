@@ -192,6 +192,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Recruitment.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECRUIT_APP_STATUS_CL.cs">
+      <DependentUpon>RecruitmentStatusCall.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\STUDENT_DETAILS.cs">
       <DependentUpon>StuModel1.tt</DependentUpon>
     </Compile>
@@ -251,6 +269,16 @@
       <DependentUpon>Recruitment.edmx</DependentUpon>
       <LastGenOutput>Recruitment1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\RecruitmentStatusCall.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentStatusCall.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecruitmentStatusCall.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentStatusCall.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\StuModel1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>StuModel1.edmx</DependentUpon>
@@ -291,6 +319,13 @@
     <Content Include="Models\Recruitment.edmx.diagram">
       <DependentUpon>Recruitment.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\RecruitmentStatusCall.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecruitmentStatusCall.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecruitmentStatusCall.edmx.diagram">
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -325,14 +360,12 @@
     <Content Include="Views\CompanyRegister\Notification.cshtml" />
     <Content Include="Views\CompanyRegister\CheckStatus.cshtml" />
     <Content Include="Views\CollegeRegister\DashBoard.cshtml" />
-    <Content Include="Views\CollegeRegister\Recrutiment.cshtml" />
     <Content Include="Views\CollegeRegister\StudentDetails.cshtml" />
     <Content Include="Views\Recruitment\Create.cshtml" />
     <Content Include="Views\Recruitment\Delete.cshtml" />
     <Content Include="Views\Recruitment\Details.cshtml" />
     <Content Include="Views\Recruitment\Edit.cshtml" />
     <Content Include="Views\Recruitment\Index.cshtml" />
-    <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
     <Content Include="Views\StudentDetails\Create.cshtml" />
     <Content Include="Views\StudentDetails\Delete.cshtml" />
@@ -341,6 +374,9 @@
     <Content Include="Views\StudentDetails\Index.cshtml" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
     <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Recruitment\Send.cshtml" />
+    <Content Include="Views\CollegeRegister\Companies.cshtml" />
+    <Content Include="Views\CollegeRegister\Apply.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

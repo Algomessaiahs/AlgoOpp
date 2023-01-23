@@ -1,5 +1,6 @@
 ﻿@model AlgoOpp.Models.Membership
 
+
 @{
     ViewBag.Title = "Login";
 }
@@ -27,7 +28,7 @@
                         @*<label class="label">Email Id :</label>*@
                         <div class="">
                             @Html.EditorFor(model => model.Email_id, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Email Id" } })
-                            @Html.ValidationMessageFor(model => model.Email_id, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.Email_id, "", new { @class = "text" })
                         </div>
                     </div>
 
@@ -36,7 +37,7 @@
                         @*<label class="label">Password : </label>*@
                         <div class="">
                             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Password" } })
-                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text" })
                         </div>
                     </div>
                     <br />
@@ -117,6 +118,9 @@
 
         hr {
             width: 200px;
+        }
+        .text{
+            color: 
         }
         /*  .btn {
             background-color:gold;
