@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
 
-<h2>Recrutiment</h2>
+<h2>Recruitment</h2>
 
 <button class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
@@ -50,55 +50,67 @@
         <th>Send</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.POSITION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JOB_LOCATION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SKILLS_REQ)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JOB_DESC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.REQ_CGPA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREATED_DATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREATED_BY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MODIFIED_DATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MODIFIED_BY)
-        </td>
-        <td class="hidden">
-            @Html.DisplayFor(modelItem => item.EST_ID)
-        </td>
-        <td style="background-color:cornsilk">
-            @Html.ActionLink("Edit", "Edit", new { id = item.RECRUIT_ID })
-        </td>
-        <td style="background-color:cornsilk">
-            @Html.ActionLink("Details", "Details", new { id = item.RECRUIT_ID })
-        </td>
-        <td style="background-color:cornsilk">
-            @Html.ActionLink("Delete", "Delete", new { id = item.RECRUIT_ID })
-        </td>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.POSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_LOCATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKILLS_REQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REQ_CGPA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATED_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATED_BY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MODIFIED_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MODIFIED_BY)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.EST_ID)
+            </td>
+            <td style="background-color:cornsilk">
+                @Html.ActionLink("Edit", "Edit", new { id = item.RECRUIT_ID })
+            </td>
+            <td style="background-color:cornsilk">
+                @Html.ActionLink("Details", "Details", new { id = item.RECRUIT_ID })
+            </td>
+            <td style="background-color:cornsilk">
+                @Html.ActionLink("Delete", "Delete", new { id = item.RECRUIT_ID })
+            </td>
+            @*//changed*@
+            <td style="background-color: cornsilk">
+                @Html.ActionLink("Send", "Send", new { id = item.RECRUIT_ID }@*, new { onclick = " confirm('Are you sure to send the recruitment details to college?');" }*@)
+                @{
+                    var parameter = Request.QueryString["ac"];
+                    //Check parameter here and display Message
+                    if (parameter == "success")
+                    {
+                        <div class="alert alert-success alert-dismissable">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <strong><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> Record Send Successfully.</strong>
+                        </div>
+                    }
+                }
+            </td>
 
-        <td style="background-color: cornsilk">
-            @Html.ActionLink("Send", "Send", new { id = item.RECRUIT_ID })
-        </td>
-     
-    </tr>
-}
-
+        </tr>
+    }
+   
 </table>
 <style>
     table {

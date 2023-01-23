@@ -6,7 +6,8 @@
 }
 
 <h2>Student Details</h2>
-<button class="btn btn-warning">
+
+<button class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
 </button>
 <br />
@@ -30,6 +31,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CGPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EST_NAME)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.EST_ID)
         </th>
         <th></th>
     </tr>
@@ -55,6 +62,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CGPA)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EST_NAME)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.EST_ID)
+            </td>
+
             <td style="background-color:dimgrey">
                 <button class="btn btn-default">
                     @Html.ActionLink("Edit", "Edit", new { id = item.STUD_ID })
@@ -67,34 +81,42 @@
                 </button>
             </td>
 
+
+            <style>
+                table {
+                    border: solid 2px azure;
+                }
+
+                th {
+                    border: solid 2px azure;
+                    background-color: black;
+                    color: aliceblue;
+                }
+
+                td {
+                    border: solid 2px azure;
+                    background-color: darkslategray;
+                    color: azure;
+                }
+
+                a:link {
+                    text-decoration: none;
+                    color: black;
+                }
+
+                button {
+                    margin-right: 2px;
+                    margin-left: 2px;
+                }
+            </style>
+
+
+            @*<td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.STUD_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.STUD_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.STUD_ID })
+                </td>*@
         </tr>
     }
 
 </table>
-<style>
-    table {
-        border: solid 2px azure;
-    }
-
-    th {
-        border: solid 2px azure;
-        background-color: black;
-        color: aliceblue;
-    }
-
-    td {
-        border: solid 2px azure;
-        background-color: darkslategray;
-        color: azure;
-    }
-
-    a:link {
-        text-decoration: none;
-        color: black;
-    }
-
-    button {
-        margin-right: 2px;
-        margin-left: 2px;
-    }
-</style>

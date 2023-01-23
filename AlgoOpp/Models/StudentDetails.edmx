@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="StudentModel2.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TechathonDB_user11Model4.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="STUDENT_DETAILS">
           <Key>
             <PropertyRef Name="STUD_ID" />
@@ -16,15 +16,17 @@
           <Property Name="DEPARTMENT" Type="varchar" MaxLength="10" />
           <Property Name="YEAR" Type="varchar" MaxLength="2" />
           <Property Name="CGPA" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="EST_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="EST_ID" Type="int" />
         </EntityType>
-        <EntityContainer Name="StudentModel2StoreContainer">
+        <EntityContainer Name="TechathonDB_user11Model4StoreContainer">
           <EntitySet Name="STUDENT_DETAILS" EntityType="Self.STUDENT_DETAILS" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="StudentModel2" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="TechathonDB_user11Model4" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="STUDENT_DETAILS">
           <Key>
             <PropertyRef Name="STUD_ID" />
@@ -36,6 +38,8 @@
           <Property Name="DEPARTMENT" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="YEAR" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
           <Property Name="CGPA" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="EST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EST_ID" Type="Int32" />
         </EntityType>
         <EntityContainer Name="StudentEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="STUDENT_DETAILS" EntityType="Self.STUDENT_DETAILS" />
@@ -45,9 +49,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="StudentModel2StoreContainer" CdmEntityContainer="StudentEntities">
+        <EntityContainerMapping StorageEntityContainer="TechathonDB_user11Model4StoreContainer" CdmEntityContainer="StudentEntities">
           <EntitySetMapping Name="STUDENT_DETAILS">
-            <EntityTypeMapping TypeName="StudentModel2.STUDENT_DETAILS">
+            <EntityTypeMapping TypeName="TechathonDB_user11Model4.STUDENT_DETAILS">
               <MappingFragment StoreEntitySet="STUDENT_DETAILS">
                 <ScalarProperty Name="STUD_ID" ColumnName="STUD_ID" />
                 <ScalarProperty Name="NAME" ColumnName="NAME" />
@@ -56,6 +60,8 @@
                 <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
                 <ScalarProperty Name="YEAR" ColumnName="YEAR" />
                 <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+                <ScalarProperty Name="EST_NAME" ColumnName="EST_NAME" />
+                <ScalarProperty Name="EST_ID" ColumnName="EST_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

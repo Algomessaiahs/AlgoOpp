@@ -12,12 +12,18 @@ namespace AlgoOpp.Controllers.College
 {
     public class StudentDetailsController : Controller
     {
+        private TechathonDB_user11Entities db1 = new TechathonDB_user11Entities();
         private StudentEntities db = new StudentEntities();
 
         // GET: StudentDetail
         public ActionResult Index()
-        {
-            return View(db.STUDENT_DETAILS.ToList());
+        {//changed
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = Convert.ToInt32(data2.EST_ID);
+            return View(db.STUDENT_DETAILS.Where(x => x.EST_ID == data3).ToList());
+           
         }
 
         // GET: StudentDetail/Details/5
@@ -49,7 +55,12 @@ namespace AlgoOpp.Controllers.College
         public ActionResult Create([Bind(Include = "STUD_ID,NAME,EMAIL_ID,MOBILE,DEPARTMENT,YEAR,CGPA")] STUDENT_DETAILS sTUDENT_DETAILS)
         {
             if (ModelState.IsValid)
-            {
+            {//changed
+                var session = (AlgoOpp.Models.Membership)Session["model"];
+                var data = session.Email_id;
+                var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+                sTUDENT_DETAILS.EST_NAME = data2.EST_NAME;
+                sTUDENT_DETAILS.EST_ID = data2.EST_ID;
                 db.STUDENT_DETAILS.Add(sTUDENT_DETAILS);
                 db.SaveChanges();
                 return RedirectToAction("Index");

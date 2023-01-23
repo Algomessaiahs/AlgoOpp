@@ -19,11 +19,17 @@ namespace AlgoOpp.Controllers.Company
         private TechathonDB_user11Model2 db2 = new TechathonDB_user11Model2();
         private TechathonDB_user11Entities3 db3 = new TechathonDB_user11Entities3();
 
-        private Nullable<System.DateTime> created_date;
+        
         // GET: Recruitment
         public ActionResult Index()
-        {
-            return View(db.RECRUITMENTs.ToList());
+        {//changed
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = Convert.ToInt32(data2.EST_ID);
+            return View(db.RECRUITMENTs.Where(x => x.EST_ID == data3).ToList());
+
+            
         }
 
         // GET: Recruitment/Details/5
@@ -155,7 +161,7 @@ namespace AlgoOpp.Controllers.Company
             base.Dispose(disposing);
         }
 
-       
+       //send the recruitment details to college Companies
         public ActionResult Send(RECRUIT_APP_STATUS_CL recruit,int id)
         {
             var data = db.RECRUITMENTs.FirstOrDefault(x => x.RECRUIT_ID == id);
@@ -178,9 +184,10 @@ namespace AlgoOpp.Controllers.Company
 
                 db3.RECRUIT_APP_STATUS_CL.Add(recruit);
                 db3.SaveChanges();
+                
 
-            }
-            return RedirectToAction("Index");
+            }//changed
+            return RedirectToAction("Index", new {msg="success"});
         }
     }
 }
