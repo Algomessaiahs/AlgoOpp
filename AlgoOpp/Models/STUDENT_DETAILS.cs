@@ -21,5 +21,7 @@ namespace AlgoOpp.Models
         public string DEPARTMENT { get; set; }
         public string YEAR { get; set; }
         public Nullable<decimal> CGPA { get; set; }
+        public string EST_NAME { get; set; }
+        public Nullable<int> EST_ID { get; set; }
     }
 }

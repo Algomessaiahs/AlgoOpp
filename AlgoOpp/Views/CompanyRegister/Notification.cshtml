@@ -1,15 +1,7 @@
 ﻿
 @{
     ViewBag.Title = "Notification";
-    Layout = null;
-    if (Session["EMAIL_ID"] == null)
-    {
-        Response.Redirect("~/CompanyRegister/Login");
-    }
-    else
-    {
-        Layout = "~/Views/Shared/Layout_Company.cshtml";
-    }
+    Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
 
 <h2>Notification</h2>

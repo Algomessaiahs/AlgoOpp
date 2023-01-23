@@ -2,23 +2,17 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = null;
-    if (Session["EMAIL_ID"] == null)
-    {
-        Response.Redirect("~/CompanyRegister/Login");
-    }
-    else
-    {
-        Layout = "~/Views/Shared/Layout_Company.cshtml";
-    }
+    Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Recrutiment</h2>
 
-<p>
+<button class="btn btn-default">
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+</button>
+<br />
+<hr />
+<table class="table container-fluid">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.POSITION)
@@ -47,7 +41,13 @@
         <th>
             @Html.DisplayNameFor(model => model.MODIFIED_BY)
         </th>
-        <th></th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.EST_ID)
+        </th>
+        <th>Edit</th>
+        <th>Detail</th>
+        <th>Delete</th>
+        <th>Send</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -79,37 +79,52 @@
         <td>
             @Html.DisplayFor(modelItem => item.MODIFIED_BY)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RECRUIT_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RECRUIT_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RECRUIT_ID })
+        <td class="hidden">
+            @Html.DisplayFor(modelItem => item.EST_ID)
         </td>
+        <td style="background-color:cornsilk">
+            @Html.ActionLink("Edit", "Edit", new { id = item.RECRUIT_ID })
+        </td>
+        <td style="background-color:cornsilk">
+            @Html.ActionLink("Details", "Details", new { id = item.RECRUIT_ID })
+        </td>
+        <td style="background-color:cornsilk">
+            @Html.ActionLink("Delete", "Delete", new { id = item.RECRUIT_ID })
+        </td>
+
+        <td style="background-color: cornsilk">
+            @Html.ActionLink("Send", "Send", new { id = item.RECRUIT_ID })
+        </td>
+     
     </tr>
 }
 
 </table>
 <style>
-                table {
-                        border: solid 2px azure;
-
+    table {
+        border: solid 2px black;
     }
 
-                 th {
-                        border: solid 2px azure;
-                        background-color: black;
-                        color: aliceblue;
-
+    th {
+        border: solid 2px black;
+        background-color: black;
+        color: aliceblue;
     }
 
-                 td {
-                        border: solid 2px azure;
-                        background-color:darkslategray;
-                        color: azure;
-
+    td {
+        border: solid 2px black;
+        background-color: cornsilk;
+        color: black;
+        
     }
 
-                 a:link {
-                        text-decoration: none;
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
 
+    button {
+        margin-right: 2px;
+        margin-left: 2px;
     }
 </style>

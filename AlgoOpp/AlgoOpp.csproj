@@ -174,31 +174,73 @@
       <DependentUpon>Company.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Membership.cs" />
+    <Compile Include="Models\Recruitment.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECRUITMENT.cs">
+      <DependentUpon>Recruitment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recruitment.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Recruitment1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Recruitment.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentStatusCall.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECRUIT_APP_STATUS_CL.cs">
+      <DependentUpon>RecruitmentStatusCall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDetails.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\STUDENT_DETAILS.cs">
-      <DependentUpon>StuModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StuModel1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuModel1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StuModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\StuModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>StuModel1.edmx</DependentUpon>
+      <DependentUpon>StudentDetails.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\About.png" />
+    <Content Include="Content\About2.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Company.png" />
+    <Content Include="Content\Contact.png" />
+    <Content Include="Content\Dashboard.png" />
+    <Content Include="Content\Home.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -223,15 +265,35 @@
       <DependentUpon>Company.edmx</DependentUpon>
       <LastGenOutput>Company.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\StuModel1.Context.tt">
+    <Content Include="Models\Recruitment.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StuModel1.edmx</DependentUpon>
-      <LastGenOutput>StuModel1.Context.cs</LastGenOutput>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+      <LastGenOutput>Recruitment.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\StuModel1.tt">
+    <Content Include="Models\Recruitment.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>StuModel1.edmx</DependentUpon>
-      <LastGenOutput>StuModel1.cs</LastGenOutput>
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+      <LastGenOutput>Recruitment1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecruitmentStatusCall.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentStatusCall.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecruitmentStatusCall.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentStatusCall.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentDetails.edmx</DependentUpon>
+      <LastGenOutput>StudentDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\StudentDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>StudentDetails.edmx</DependentUpon>
+      <LastGenOutput>StudentDetails.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -249,12 +311,26 @@
     <Content Include="Models\College.edmx.diagram">
       <DependentUpon>College.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\StuModel1.edmx">
+    <EntityDeploy Include="Models\Recruitment.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StuModel1.Designer.cs</LastGenOutput>
+      <LastGenOutput>Recruitment.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\StuModel1.edmx.diagram">
-      <DependentUpon>StuModel1.edmx</DependentUpon>
+    <Content Include="Models\Recruitment.edmx.diagram">
+      <DependentUpon>Recruitment.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\RecruitmentStatusCall.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecruitmentStatusCall.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecruitmentStatusCall.edmx.diagram">
+      <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StudentDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentDetails.edmx.diagram">
+      <DependentUpon>StudentDetails.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -287,23 +363,28 @@
     <Content Include="Views\Shared\Layout_Company.cshtml" />
     <Content Include="Views\CompanyRegister\DashBoard.cshtml" />
     <Content Include="Views\CompanyRegister\Recruitment.cshtml" />
-    <Content Include="Views\CompanyRegister\Notification.cshtml" />
     <Content Include="Views\CompanyRegister\CheckStatus.cshtml" />
     <Content Include="Views\CollegeRegister\DashBoard.cshtml" />
-    <Content Include="Views\CollegeRegister\Recrutiment.cshtml" />
     <Content Include="Views\CollegeRegister\StudentDetails.cshtml" />
     <Content Include="Views\Recruitment\Create.cshtml" />
     <Content Include="Views\Recruitment\Delete.cshtml" />
     <Content Include="Views\Recruitment\Details.cshtml" />
     <Content Include="Views\Recruitment\Edit.cshtml" />
     <Content Include="Views\Recruitment\Index.cshtml" />
-    <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
     <Content Include="Views\StudentDetails\Create.cshtml" />
     <Content Include="Views\StudentDetails\Delete.cshtml" />
     <Content Include="Views\StudentDetails\Details.cshtml" />
     <Content Include="Views\StudentDetails\Edit.cshtml" />
     <Content Include="Views\StudentDetails\Index.cshtml" />
+    <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Shared\_Notification.cshtml" />
+    <Content Include="Views\Recruitment\Send.cshtml" />
+    <Content Include="Views\CollegeRegister\Companies.cshtml" />
+    <Content Include="Views\CollegeRegister\Apply.cshtml" />
+    <Content Include="Views\CompanyRegister\Notification.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

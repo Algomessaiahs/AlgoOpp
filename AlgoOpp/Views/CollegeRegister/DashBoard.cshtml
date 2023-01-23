@@ -1,12 +1,12 @@
 ﻿
 @{
     ViewBag.Title = "DashBoard";
-    Layout = null;
-    if (Session["EMAIL_ID"] == null)
-    {
-        Response.Redirect("~/CollegeRegister/Login");
-    }
-    else
+    //Layout = null;
+    //if (Session["EMAIL_ID"] == null)
+    //{
+    //    Response.Redirect("~/CollegeRegister/Login");
+    //}
+    //else
     {
         Layout = "~/Views/Shared/Layout_College.cshtml";
     }
@@ -14,4 +14,20 @@
 }
 
 <h2>DashBoard</h2>
+<div class="container-fluid">
+    <center>
+        <img id="img" src="~/Content/Dashboard.png" />
+    </center>
+</div>
 
+<style>
+    #img{
+        width:100%;
+        height:500px;
+        margin-top:70px;
+        border-radius:20px;
+    }
+    h2 {
+        margin-top: 50px;
+    }
+</style>

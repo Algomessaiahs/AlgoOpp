@@ -2,13 +2,15 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout_College.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
+<h2>Student Details</h2>
+<button class="btn btn-warning">
     @Html.ActionLink("Create New", "Create")
-</p>
+</button>
+<br />
+<hr />
 <table class="table">
     <tr>
         <th>
@@ -32,32 +34,67 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MOBILE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEPARTMENT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YEAR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CGPA)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.STUD_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.STUD_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.STUD_ID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EMAIL_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MOBILE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CGPA)
+            </td>
+            <td style="background-color:dimgrey">
+                <button class="btn btn-default">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.STUD_ID })
+                </button>
+                <button class="btn btn-default">
+                    @Html.ActionLink("Details", "Details", new { id = item.STUD_ID })
+                </button>
+                <button class="btn btn-default">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.STUD_ID })
+                </button>
+            </td>
+
+        </tr>
+    }
 
 </table>
+<style>
+    table {
+        border: solid 2px azure;
+    }
+
+    th {
+        border: solid 2px azure;
+        background-color: black;
+        color: aliceblue;
+    }
+
+    td {
+        border: solid 2px azure;
+        background-color: darkslategray;
+        color: azure;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
+
+    button {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+</style>

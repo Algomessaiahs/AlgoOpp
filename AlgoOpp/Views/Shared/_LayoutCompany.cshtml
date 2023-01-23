@@ -1,0 +1,65 @@
+﻿@{
+
+    var session = (AlgoOpp.Models.Membership)Session["model"];
+    if (session == null)
+    {
+        Response.Redirect("~/CompanyRegister/Login");
+    }
+    
+    if (string.Compare(session?.Est_Type, "College", true) == 0)
+    {
+        Response.Redirect("~/CollegeRegister/Login");
+    }
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
+
+        <div class="container-fluid">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <img class=".navbar-brand" src="~/Content/Logo.png" width="50px" height="50px" />
+
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav" style="color:blueviolet; float:right;">
+                    <li>@Html.ActionLink("Dashboard", "DashBoard", "CompanyRegister")</li>
+                    <li>@Html.ActionLink("Recruitment", "Index", "Recruitment")</li>
+                    <li>@Html.ActionLink("Notification", "Notification", "CompanyRegister")</li>
+                    <li>@Html.ActionLink("Check Status", "CheckStatus", "CompanyRegister")</li>
+                    @*<li>@Html.ActionLink("LogOut", "LogOut", "Home")</li>*@
+                    <li><a href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

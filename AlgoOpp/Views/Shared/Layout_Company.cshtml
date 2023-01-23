@@ -1,4 +1,18 @@
-﻿<!DOCTYPE html>
+﻿@{
+
+    var session = (AlgoOpp.Models.Membership)Session["model"];
+    if (session == null)
+    {
+        Response.Redirect("~/CompanyRegister/Login");
+    }
+    
+    if (string.Compare(session?.Est_Type, "College", true) == 0)
+    {
+        Response.Redirect("~/CollegeRegister/Login");
+    }
+
+}
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -28,6 +42,7 @@
                     <li>@Html.ActionLink("Recruitment", "Index", "Recruitment")</li>
                     <li>@Html.ActionLink("Notification", "Notification", "CompanyRegister")</li>
                     <li>@Html.ActionLink("Check Status", "CheckStatus", "CompanyRegister")</li>
+                   
                     @*<li>@Html.ActionLink("LogOut", "LogOut", "Home")</li>*@
                     <li><a href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
 
@@ -38,9 +53,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 

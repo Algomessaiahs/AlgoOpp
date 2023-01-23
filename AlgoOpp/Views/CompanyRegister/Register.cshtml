@@ -14,13 +14,13 @@
     <div class="form-horizontal">
         <h4>COMPANY_DETAILS</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
+        @Html.ValidationSummary(true, "", new { @class = "text" })
+        <div class="form-group hidden">
             @Html.LabelFor(model => model.EST_TYPE, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.EST_TYPE, new { @class = "form-control", @Value = "Company" })
 
-                @Html.ValidationMessageFor(model => model.EST_TYPE, "", new { @class = "text-danger" })
+                @Html.ValidationMessageFor(model => model.EST_TYPE, "", new { @class = "text" })
 
             </div>
         </div>
@@ -28,62 +28,62 @@
         <div class="form-group">
             @Html.LabelFor(model => model.EST_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EST_NAME, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EST_NAME, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.EST_NAME, new { htmlAttributes = new { @class = "form-control", placeholder = "Company Name" } })
+                @Html.ValidationMessageFor(model => model.EST_NAME, "", new { @class = "text" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.EMAIL_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EMAIL_ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EMAIL_ID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.EMAIL_ID, new { htmlAttributes = new { @class = "form-control", placeholder = "Email Id" } })
+                @Html.ValidationMessageFor(model => model.EMAIL_ID, "", new { @class = "text" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PASSWORD, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PASSWORD, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
+                @Html.ValidationMessageFor(model => model.PASSWORD, "", new { @class = "text" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.CITY, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CITY, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CITY, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.CITY, new { htmlAttributes = new { @class = "form-control", placeholder = "City" } })
+                @Html.ValidationMessageFor(model => model.CITY, "", new { @class = "text" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.ADDRESS, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ADDRESS, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ADDRESS, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ADDRESS, new { htmlAttributes = new { @class = "form-control", placeholder = "Address" } })
+                @Html.ValidationMessageFor(model => model.ADDRESS, "", new { @class = "text" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PINCODE, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PINCODE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PINCODE, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.PINCODE, new { htmlAttributes = new { @class = "form-control", placeholder = "Pin Code" } })
+                @Html.ValidationMessageFor(model => model.PINCODE, "", new { @class = "text" })
             </div>
         </div>
 
         @*<div class="form-group">
-                @Html.LabelFor(model => model.EST_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.EST_ID, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.EST_ID, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
+            @Html.LabelFor(model => model.EST_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EST_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EST_ID, "", new { @class = "text" })
+            </div>
+        </div>*@
+        <hr />
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </div>
     </div>
@@ -151,7 +151,7 @@
     }
 
     hr {
-        width: 200px;
+        width: 600px;
     }
     /*  .btn {
             background-color:gold;
@@ -163,6 +163,9 @@
             transition: 0.2s ease;
             cursor: pointer;
         }*/
+    .text{
+        color:palevioletred;
+    }
 
 </style>
 

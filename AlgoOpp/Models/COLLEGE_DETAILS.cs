@@ -11,15 +11,31 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class COLLEGE_DETAILS
     {
+        [Required(ErrorMessage = "Incorrect Type")]
         public string EST_TYPE { get; set; }
+        [Required(ErrorMessage = "College Name id is required")]
+        [DisplayName("Name")]
         public string EST_NAME { get; set; }
+        [DisplayName("Email Id")]
+        [Required(ErrorMessage = "Email Id is required")]
+        [RegularExpression("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*$",
+            ErrorMessage = " Please enter correct email address.")]
         public string EMAIL_ID { get; set; }
+        [DisplayName("Password")]
+        [Required(ErrorMessage = "Password is required")]
+        [RegularExpression("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[^\\da-zA-Z]).{8,15}$",
+            ErrorMessage = "Password Must be 8 - 15 characters, Minimum One Alphabets, Numbers and special character Must be Entered.")]
         public string PASSWORD { get; set; }
+        [DisplayName("City")]
         public string CITY { get; set; }
+        [DisplayName("Address")]
         public string ADDRESS { get; set; }
+        [DisplayName("Pin Code")]
         public Nullable<int> PINCODE { get; set; }
         public int EST_ID { get; set; }
     }

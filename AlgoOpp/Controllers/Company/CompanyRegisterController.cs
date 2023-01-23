@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using AlgoOpp.Models;
+using Membership = AlgoOpp.Models.Membership;
 
 namespace AlgoOpp.Controllers
 {
@@ -14,35 +14,29 @@ namespace AlgoOpp.Controllers
         // GET: Account
         public ActionResult Login()
         {
+            Session.Abandon();
             return View();
         }
         [HttpPost]
         public ActionResult Login(Models.Membership model)
         {
-            using (var data = new TechathonDB_user11Entities2())
+            using (var data = new TechathonDB_user11Model2())
             {
-                //bool isValid = data.COMPANY_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
-                //if (isValid)
-                //{
-                //    FormsAuthentication.SetAuthCookie(model.Email_id, false);
-                //    return RedirectToAction("DashBoard", "CompanyRegister");
-                //}
-                //ModelState.AddModelError("", "Invalid username or password");
-                //return View();
-                var UserDetail = data.COMPANY_DETAILS.Where(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
-                if(UserDetail == null)
+                
+                var UserDetail = data.COMPANY_DETAILS.Where(x => x.EST_TYPE == model.Est_Type && x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password ).FirstOrDefault();
+                if (UserDetail == null)
                 {
-                    ModelState.AddModelError("", "Invalid username or password");
-                    return View("Login" , model);
+                    //ModelState.AddModelError("", "Invalid username or password");
+                    return View("Login", model);
                 }
                 else
                 {
-                    Session["EMAIL_ID"] = model.Email_id;
-                    //var UserName = from r in data.COMPANY_DETAILS where 
-                    
+                    Session["model"] = model;
+                   
 
-                    return RedirectToAction("DashBoard", "CompanyRegister");
+                    return RedirectToAction("DashBoard");
                 }
+                
             }
         }
         public ActionResult Register()
@@ -53,7 +47,7 @@ namespace AlgoOpp.Controllers
         public ActionResult Register(COMPANY_DETAILS model)
         {
             ViewBag.Message = "Company";
-            using (var data = new TechathonDB_user11Entities2())
+            using (var data = new TechathonDB_user11Model2())
             {
                 data.COMPANY_DETAILS.Add(model);
                 data.SaveChanges();
@@ -64,7 +58,7 @@ namespace AlgoOpp.Controllers
 
         public ActionResult Logout()
         {
-            //FormsAuthentication.SignOut();
+            
             Session.Abandon();
             return RedirectToAction("Login", "CompanyRegister");
         }
@@ -78,14 +72,15 @@ namespace AlgoOpp.Controllers
 
             return View();
         }
-        public ActionResult Notification()
+       
+        public ActionResult CheckStatus()
         {
 
             return View();
         }
-        public ActionResult CheckStatus()
+       
+        public ActionResult Notification()
         {
-
             return View();
         }
 
