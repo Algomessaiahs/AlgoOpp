@@ -37,13 +37,13 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="color:black; float:right;">
-                    <li>@Html.ActionLink("Dashboard", "Index", "CollegeRegister")</li>
+                    <li>@Html.ActionLink("Dashboard", "DashBoard", "CollegeRegister")</li>
                     <li>@Html.ActionLink("Student Details", "Index", "StudentDetails")</li>
-                    <li>@Html.ActionLink("Companies", "Companies", "CollegeRegister")</li>
+                    <li>@Html.ActionLink("Current Openings", "Companies", "CollegeRegister")</li>
                     <li>@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
-                    <li><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
+                    
                     <li class="dropdown">
-                        <a class=" dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:;">notifcation</a>
+                        <a class=" dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:;">Notifcation</a>
                         @{ Html.RenderAction("Notification", "CollegeRegister"); }
                     </li>
 
@@ -59,9 +59,7 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

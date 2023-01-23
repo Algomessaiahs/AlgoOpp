@@ -11,21 +11,31 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class RECRUITMENT
     {
        
-            public int RECRUIT_ID { get; set; }
-            public string POSITION { get; set; }
-            public string JOB_LOCATION { get; set; }
-            public string SKILLS_REQ { get; set; }
-            public string JOB_DESC { get; set; }
-            public Nullable<decimal> REQ_CGPA { get; set; }
-            public Nullable<System.DateTime> CREATED_DATE { get; set; }
-            public string CREATED_BY { get; set; }
-            public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
-            public string MODIFIED_BY { get; set; }
-            public Nullable<int> EST_ID { get; set; }
+         public int RECRUIT_ID { get; set; }
+         [DisplayName("Designation")]
+        public string POSITION { get; set; }
+        [DisplayName("Job Location")]
+        public string JOB_LOCATION { get; set; }
+        [DisplayName("Skills Required")]
+        public string SKILLS_REQ { get; set; }
+        [DisplayName("Job Description")]
+        public string JOB_DESC { get; set; }
+        [DisplayName("Requird CGPA")]
+        public Nullable<decimal> REQ_CGPA { get; set; }
+        [DisplayName("Created Date")]
+        public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        [DisplayName("Created By")]
+        public string CREATED_BY { get; set; }
+        [DisplayName("Modified Date")]
+        public Nullable<System.DateTime> MODIFIED_DATE { get; set; }
+        [DisplayName("Modified By")]
+        public string MODIFIED_BY { get; set; }
+        public Nullable<int> EST_ID { get; set; }
         }
     }
 

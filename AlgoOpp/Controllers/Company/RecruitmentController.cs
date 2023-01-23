@@ -180,7 +180,7 @@ namespace AlgoOpp.Controllers.Company
                 db3.SaveChanges();
 
             }
-            return View();
+            return RedirectToAction("Index");
         }
     }
 }

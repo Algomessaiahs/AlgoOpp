@@ -235,6 +235,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dashboard.png" />
+    <Content Include="Content\Home.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -357,7 +359,6 @@
     <Content Include="Views\Shared\Layout_Company.cshtml" />
     <Content Include="Views\CompanyRegister\DashBoard.cshtml" />
     <Content Include="Views\CompanyRegister\Recruitment.cshtml" />
-    <Content Include="Views\CompanyRegister\Notification.cshtml" />
     <Content Include="Views\CompanyRegister\CheckStatus.cshtml" />
     <Content Include="Views\CollegeRegister\DashBoard.cshtml" />
     <Content Include="Views\CollegeRegister\StudentDetails.cshtml" />
@@ -377,6 +378,7 @@
     <Content Include="Views\Recruitment\Send.cshtml" />
     <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\Apply.cshtml" />
+    <Content Include="Views\CompanyRegister\Notification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

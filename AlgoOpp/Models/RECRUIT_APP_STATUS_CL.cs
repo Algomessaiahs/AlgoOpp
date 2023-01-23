@@ -11,19 +11,29 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class RECRUIT_APP_STATUS_CL
     {
         public int NOTIFY_ID { get; set; }
         public Nullable<int> EST_ID { get; set; }
+        [DisplayName("Company Name")]
         public string EST_NAME { get; set; }
+        [DisplayName("Designation")]
         public string POSITION { get; set; }
+        [DisplayName("Job Location")]
         public string JOB_LOCATION { get; set; }
+        [DisplayName("Job Description")]
         public string JOB_DESC { get; set; }
+        [DisplayName("Skills Required")]
         public string SKILLS_REQ { get; set; }
+        [DisplayName("Requird CGPA")]
         public Nullable<decimal> REQ_CGPA { get; set; }
+        [DisplayName("Created Date")]
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
+        [DisplayName("Apply Date")]
         public Nullable<System.DateTime> APPLIED_DATE { get; set; }
+        [DisplayName("Status")]
         public string APP_STATUS { get; set; }
         public Nullable<int> RECRUIT_ID { get; set; }
     }

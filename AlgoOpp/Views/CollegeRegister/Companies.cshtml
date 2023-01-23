@@ -2,16 +2,16 @@
 
 @{
     ViewBag.Title = "Companies";
+    Layout = "~/Views/Shared/Layout_College.cshtml";
 }
 
-<h2>Companies</h2>
+<h2>Current Openings</h2>
 
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-</p>
+<hr />
+
 <table class="table">
     <tr>
-        <th>
+        <th class="hidden">
             @Html.DisplayNameFor(model => model.EST_ID)
         </th>
         <th>
@@ -41,7 +41,7 @@
         <th>
             @Html.DisplayNameFor(model => model.APP_STATUS)
         </th>
-        <th>
+        <th class="hidden">
             @Html.DisplayNameFor(model => model.RECRUIT_ID)
         </th>
         <th>
@@ -51,7 +51,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td  class="hidden">
             @Html.DisplayFor(modelItem => item.EST_ID)
         </td>
         <td>
@@ -80,14 +80,18 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.APP_STATUS)
-           
+
         </td>
-        <td>
+        <td class="hidden">
             @Html.DisplayFor(modelItem => item.RECRUIT_ID)
         </td>
+        
         <td>
             @*<a href="~/CollegeRegister/Apply">Edit</a>*@
-            @Html.ActionLink("Apply", "Apply", new { id = item.NOTIFY_ID })
+            <button class="btn btn-default">
+                @Html.ActionLink("Apply", "Apply", new { id = item.NOTIFY_ID })
+            </button>
+            
             @*@Html.ActionLink("Reject", "Reject")*@
             @*@Html.ActionLink("Edit", "Edit", new { id=item.NOTIFY_ID }) |
         @Html.ActionLink("Details", "Details", new { id=item.NOTIFY_ID }) |
@@ -97,3 +101,34 @@
 }
 
 </table>
+<style>
+    table {
+        border: solid 2px azure;
+    }
+
+    th {
+        border: solid 2px azure;
+        background-color: black;
+        color: aliceblue;
+    }
+
+    td {
+        border: solid 2px azure;
+        background-color: darkslategray;
+        color: azure;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+
+    button {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
+</style>

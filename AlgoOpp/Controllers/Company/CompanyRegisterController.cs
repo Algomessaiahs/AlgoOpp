@@ -22,27 +22,19 @@ namespace AlgoOpp.Controllers
         {
             using (var data = new TechathonDB_user11Model2())
             {
-                //bool isValid = data.COMPANY_DETAILS.Any(x => x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password);
-                //if (isValid)
-                //{
-                //    FormsAuthentication.SetAuthCookie(model.Email_id, false);
-                //    return RedirectToAction("DashBoard", "CompanyRegister");
-                //}
-                //ModelState.AddModelError("", "Invalid username or password");
-                //return View();
+                
                 var UserDetail = data.COMPANY_DETAILS.Where(x => x.EST_TYPE == model.Est_Type && x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password ).FirstOrDefault();
                 if (UserDetail == null)
                 {
-                    ModelState.AddModelError("", "Invalid username or password");
+                    //ModelState.AddModelError("", "Invalid username or password");
                     return View("Login", model);
                 }
                 else
                 {
                     Session["model"] = model;
-                    //Session["EST_TYPE"] = model.Est_Type;
-                    //Session["EMAIL_ID"] = model.Email_id;
+                   
 
-                    return RedirectToAction("DashBoard"/*, "CompanyRegister"*/);
+                    return RedirectToAction("DashBoard");
                 }
                 
             }
@@ -66,7 +58,7 @@ namespace AlgoOpp.Controllers
 
         public ActionResult Logout()
         {
-            //FormsAuthentication.SignOut();
+            
             Session.Abandon();
             return RedirectToAction("Login", "CompanyRegister");
         }
@@ -80,14 +72,15 @@ namespace AlgoOpp.Controllers
 
             return View();
         }
-        public ActionResult Notification()
+       
+        public ActionResult CheckStatus()
         {
 
             return View();
         }
-        public ActionResult CheckStatus()
+       
+        public ActionResult Notification()
         {
-
             return View();
         }
 

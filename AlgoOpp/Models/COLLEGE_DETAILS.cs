@@ -11,12 +11,19 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class COLLEGE_DETAILS
     {
+       
         public string EST_TYPE { get; set; }
+        [Required(ErrorMessage = "College Name id is required")]
+       
         public string EST_NAME { get; set; }
+        [Required(ErrorMessage = "EmailId is required")]
         public string EMAIL_ID { get; set; }
+        [Required(ErrorMessage = "Password is required")]
         public string PASSWORD { get; set; }
         public string CITY { get; set; }
         public string ADDRESS { get; set; }
