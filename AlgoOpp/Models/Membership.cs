@@ -10,6 +10,7 @@ namespace AlgoOpp.Models
     {
         //public int Est_Id { get; set; }
         //public string Est_Name { get; set; }
+        
         public string Est_Type { get; set; }
 
         [DataType(DataType.EmailAddress)]

@@ -53,7 +53,7 @@ namespace AlgoOpp.Controllers.College
         public ActionResult Create([Bind(Include = "STUD_ID,NAME,EMAIL_ID,MOBILE,DEPARTMENT,YEAR,CGPA")] STUDENT_DETAILS sTUDENT_DETAILS)
         {
             if (ModelState.IsValid)
-            {//changed
+            {
                 var session = (AlgoOpp.Models.Membership)Session["model"];
                 var data = session.Email_id;
                 var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());

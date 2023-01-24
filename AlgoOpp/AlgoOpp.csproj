@@ -241,6 +241,8 @@
     <Content Include="Content\Contact.png" />
     <Content Include="Content\Dashboard.png" />
     <Content Include="Content\Home.png" />
+    <Content Include="Content\Logo.png" />
+    <Content Include="Content\Logo2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

@@ -23,11 +23,14 @@
 
                         @*<label class="label">Email Id :</label>*@
                         @Html.TextBoxFor(model => model.Est_Type, new { @class = "form-control", @Value = "Company" })
+                    </div>
+                    <div class="alert-danger">
                         @Html.ValidationMessageFor(model => model.Est_Type, "", new { @class = "text" })
                     </div>
+                   
                     <div class="form-group">
 
-                      
+
                         <div class="">
                             @Html.EditorFor(model => model.Email_id, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Email ID" } })
                             @Html.ValidationMessageFor(model => model.Email_id, "", new { @class = "text" })
@@ -36,7 +39,7 @@
                     </div>
 
                     <div class="form-group">
-                      
+
                         <div class="">
                             @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Password" } })
                             @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text" })
