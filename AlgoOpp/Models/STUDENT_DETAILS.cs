@@ -29,9 +29,9 @@ namespace AlgoOpp.Models
         public string YEAR { get; set; }
         [DisplayName("CGPA")]
         public Nullable<decimal> CGPA { get; set; }
-        [DisplayName("stud id")]
+        [DisplayName("College Name")]
         public string EST_NAME { get; set; }
-        [DisplayName("Est id")]
+        [DisplayName("Est Id")]
         public Nullable<int> EST_ID { get; set; }
 
     }

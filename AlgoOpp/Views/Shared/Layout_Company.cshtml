@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <img class=".navbar-brand" src="~/Content/Logo.png" width="50px" height="50px" />
+                <img class=".navbar-brand" src="~/Content/Logo2.png" />
 
             </div>
             <div class="navbar-collapse collapse">
@@ -42,7 +42,7 @@
                     <li>@Html.ActionLink("Recruitment", "Index", "Recruitment")</li>
                     <li>@Html.ActionLink("Notification", "Notification", "CompanyRegister")</li>
                     <li>@Html.ActionLink("Check Status", "CheckStatus", "CompanyRegister")</li>
-                   
+
                     @*<li>@Html.ActionLink("LogOut", "LogOut", "Home")</li>*@
                     <li><a href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
 
@@ -50,10 +50,16 @@
             </div>
         </div>
     </div>
+    <style>
+        img {
+            width: 200px;
+            height: 50px;
+        }
+    </style>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        
+
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 

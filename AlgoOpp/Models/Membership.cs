@@ -16,7 +16,7 @@ namespace AlgoOpp.Models
         [Required(ErrorMessage = "Email id is required")]
         
         public string Email_id { get; set; }
-        [Required(ErrorMessage = "Password id is required")]
+        [Required(ErrorMessage = "Password is required")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
        

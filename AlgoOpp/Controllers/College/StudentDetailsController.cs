@@ -23,7 +23,7 @@ namespace AlgoOpp.Controllers.College
             var session = (AlgoOpp.Models.Membership)Session["model"];
             var data = session.Email_id;
             var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
-            var data3 = Convert.ToInt32(data2.EST_ID);
+            var data3 = data2.EST_ID;
             return View(db.STUDENT_DETAILS.Where(x => x.EST_ID == data3).ToList());
 
 

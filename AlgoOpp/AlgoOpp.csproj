@@ -263,6 +263,7 @@
     <Content Include="Content\Contact.png" />
     <Content Include="Content\Dashboard.png" />
     <Content Include="Content\Home.png" />
+    <Content Include="Content\Logo2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -421,9 +422,9 @@
     <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\Apply.cshtml" />
     <Content Include="Views\CompanyRegister\Notification.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\CompanyRegister\Approve.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

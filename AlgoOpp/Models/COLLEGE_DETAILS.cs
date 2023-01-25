@@ -18,7 +18,7 @@ namespace AlgoOpp.Models
     {
         [Required(ErrorMessage = "Incorrect Type")]
         public string EST_TYPE { get; set; }
-        [Required(ErrorMessage = "College Name id is required")]
+        [Required(ErrorMessage = "College Name is required")]
         [DisplayName("Name")]
         public string EST_NAME { get; set; }
         [DisplayName("Email Id")]

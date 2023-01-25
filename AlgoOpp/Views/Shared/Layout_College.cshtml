@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <img class=".navbar-brand" src="~/Content/Logo.png" width="50px" height="50px" />
+                <img class=".navbar-brand" src="~/Content/Logo2.png" />
 
             </div>
             <div class="navbar-collapse collapse">
@@ -41,7 +41,7 @@
                     <li>@Html.ActionLink("Student Details", "Index", "StudentDetails")</li>
                     <li>@Html.ActionLink("Current Openings", "Companies", "CollegeRegister")</li>
                     <li>@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
-                    
+
                     <li class="dropdown">
                         <a class=" dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:;">Notifcation</a>
                         @{ Html.RenderAction("Notification", "CollegeRegister"); }
@@ -53,8 +53,15 @@
             </div>
         </div>
     </div>
+    <style>
+        img {
+            width: 200px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
+    
 
     <div class="container body-content">
         @RenderBody()
