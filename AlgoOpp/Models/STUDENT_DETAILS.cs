@@ -11,17 +11,28 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class STUDENT_DETAILS
     {
+        [DisplayName("stud id")]
         public int STUD_ID { get; set; }
+        [DisplayName("Name")]
         public string NAME { get; set; }
+        [DisplayName("Email_id")]
         public string EMAIL_ID { get; set; }
+        [DisplayName("Mobile")]
         public Nullable<long> MOBILE { get; set; }
+        [DisplayName("Department")]
         public string DEPARTMENT { get; set; }
+        [DisplayName("Year")]
         public string YEAR { get; set; }
+        [DisplayName("CGPA")]
         public Nullable<decimal> CGPA { get; set; }
+        [DisplayName("stud id")]
         public string EST_NAME { get; set; }
+        [DisplayName("Est id")]
         public Nullable<int> EST_ID { get; set; }
+
     }
 }

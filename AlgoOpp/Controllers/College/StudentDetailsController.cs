@@ -13,15 +13,21 @@ namespace AlgoOpp.Controllers.College
     public class StudentDetailsController : Controller
     {
         private TechathonDB_user11Entities db1 = new TechathonDB_user11Entities();
-        //private StudentDetails db = new StudentEntities();
+
         TechathonDB_user11Entities4 db = new TechathonDB_user11Entities4();
-        //private STUDENT_DETAILS db = new STUDENT_DETAILS(); 
+
 
         // GET: StudentDetail
         public ActionResult Index()
         {
-            
-            return View(db.STUDENT_DETAILS.ToList());
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = Convert.ToInt32(data2.EST_ID);
+            return View(db.STUDENT_DETAILS.Where(x => x.EST_ID == data3).ToList());
+
+
+            //return View(db.STUDENT_DETAILS.ToList());
         }
 
         // GET: StudentDetail/Details/5
@@ -46,8 +52,7 @@ namespace AlgoOpp.Controllers.College
         }
 
         // POST: StudentDetail/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "STUD_ID,NAME,EMAIL_ID,MOBILE,DEPARTMENT,YEAR,CGPA")] STUDENT_DETAILS sTUDENT_DETAILS)
@@ -57,6 +62,7 @@ namespace AlgoOpp.Controllers.College
                 var session = (AlgoOpp.Models.Membership)Session["model"];
                 var data = session.Email_id;
                 var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+                
                 sTUDENT_DETAILS.EST_NAME = data2.EST_NAME;
                 sTUDENT_DETAILS.EST_ID = data2.EST_ID;
                 db.STUDENT_DETAILS.Add(sTUDENT_DETAILS);
@@ -83,15 +89,25 @@ namespace AlgoOpp.Controllers.College
         }
 
         // POST: StudentDetail/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "STUD_ID,NAME,EMAIL_ID,MOBILE,DEPARTMENT,YEAR,CGPA")] STUDENT_DETAILS sTUDENT_DETAILS)
         {
-            if (ModelState.IsValid)
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = Convert.ToInt32(data2.EST_ID);
+            var data4 = db.STUDENT_DETAILS.FirstOrDefault(x => x.EST_ID == data3);
+            if (data4 != null)
             {
-                db.Entry(sTUDENT_DETAILS).State = EntityState.Modified;
+                data4.NAME = sTUDENT_DETAILS.NAME;
+                data4.EMAIL_ID = sTUDENT_DETAILS.EMAIL_ID;
+                data4.MOBILE = sTUDENT_DETAILS.MOBILE;
+                data4.DEPARTMENT = sTUDENT_DETAILS.DEPARTMENT;
+                data4.YEAR = sTUDENT_DETAILS.YEAR;
+                data4.CGPA = sTUDENT_DETAILS.CGPA;
+                //db.Entry(sTUDENT_DETAILS).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

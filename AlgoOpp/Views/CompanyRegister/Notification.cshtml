@@ -1,8 +1,133 @@
-﻿
+﻿@model IEnumerable<AlgoOpp.Models.RECRUIT_APP_STATUS_CY>
+
 @{
     ViewBag.Title = "Notification";
     Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
 
-<h2>Notification</h2>
+<h2>Recruitment Status</h2>
 
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RECRUIT_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.POSITION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOB_LOCATION)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JOB_DESC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SKILLS_REQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REQ_CGPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATED_DATE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EST_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APP_STATUS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APPROVAL_STATUS)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.EST_ID_CY)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.EST_ID_CL)
+        </th>
+        <th class="hidden">
+            @Html.DisplayNameFor(model => model.NOTIFY_ID_CL)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RECRUIT_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_LOCATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKILLS_REQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REQ_CGPA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATED_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EST_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APP_STATUS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APPROVAL_STATUS)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.EST_ID_CY)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.EST_ID_CL)
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.NOTIFY_ID_CL)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.NOTIFY_ID_CY }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.NOTIFY_ID_CY }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.NOTIFY_ID_CY })*@
+                @Html.ActionLink("Approve", "Approve", new { id = item.NOTIFY_ID_CY })
+            </td>
+        </tr>
+    }
+
+</table>
+<style>
+    table {
+        border: solid 2px black;
+    }
+
+    th {
+        border: solid 2px black;
+        background-color: black;
+        color: aliceblue;
+    }
+
+    td {
+        border: solid 2px black;
+        background-color: cornsilk;
+        color: black;
+    }
+
+    a:link {
+        text-decoration: none;
+        color: black;
+    }
+
+    button {
+        margin-right: 2px;
+        margin-left: 2px;
+    }
+</style>

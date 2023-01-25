@@ -18,12 +18,18 @@ namespace AlgoOpp.Controllers.Company
         private TechathonDB_user11Entities1 db = new TechathonDB_user11Entities1();
         private TechathonDB_user11Model2 db2 = new TechathonDB_user11Model2();
         private TechathonDB_user11Entities3 db3 = new TechathonDB_user11Entities3();
+        private RecruitmentAppStatusNotify_CY db4 = new RecruitmentAppStatusNotify_CY();
 
-        private Nullable<System.DateTime> created_date;
+
         // GET: Recruitment
         public ActionResult Index()
         {
-            return View(db.RECRUITMENTs.ToList());
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = Convert.ToInt32(data2.EST_ID);
+            return View(db.RECRUITMENTs.Where(x => x.EST_ID == data3).ToList());
+
         }
 
         // GET: Recruitment/Details/5
@@ -52,7 +58,7 @@ namespace AlgoOpp.Controllers.Company
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RECRUIT_ID,POSITION,JOB_LOCATION,SKILLS_REQ,JOB_DESC,REQ_CGPA")] RECRUITMENT rECRUITMENT)
         {
-           
+
 
             if (ModelState.IsValid)
             {
@@ -92,14 +98,15 @@ namespace AlgoOpp.Controllers.Company
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "RECRUIT_ID,POSITION,JOB_LOCATION,SKILLS_REQ,JOB_DESC,REQ_CGPA,CREATED_DATE,CREATED_BY,MODIFIED_DATE,MODIFIED_BY,EST_ID")] RECRUITMENT rECRUITMENT,int recruit_id,COMPANY_DETAILS company)
+        public ActionResult Edit([Bind(Include = "RECRUIT_ID,POSITION,JOB_LOCATION,SKILLS_REQ,JOB_DESC,REQ_CGPA,CREATED_DATE,CREATED_BY,MODIFIED_DATE,MODIFIED_BY,EST_ID")] RECRUITMENT rECRUITMENT, int recruit_id, COMPANY_DETAILS company)
         {
             //var est_id = from x in dbcompany.COMPANY_DETAILS where x.EMAIL_ID.Equals(Session["Email_id"]) select x.EST_ID;
+            var data = db.RECRUITMENTs.FirstOrDefault(x => x.RECRUIT_ID == recruit_id);
             var session = (AlgoOpp.Models.Membership)Session["model"];
             var data3 = session.Email_id;
             var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data3.ToString());
 
-            var data = db.RECRUITMENTs.FirstOrDefault(x => x.RECRUIT_ID == recruit_id);
+
             if (data != null)
             {
                 data.POSITION = rECRUITMENT.POSITION;
@@ -155,30 +162,41 @@ namespace AlgoOpp.Controllers.Company
             base.Dispose(disposing);
         }
 
-       
-        public ActionResult Send(RECRUIT_APP_STATUS_CL recruit,int id)
+
+        public ActionResult Send(RECRUIT_APP_STATUS_CL recruit, int id, RECRUIT_APP_STATUS_CY recruit2)
         {
             var data = db.RECRUITMENTs.FirstOrDefault(x => x.RECRUIT_ID == id);
             var session = (AlgoOpp.Models.Membership)Session["model"];
             var data3 = session.Email_id;
             var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data3.ToString());
-            if (data!=null)
+            if (data != null)
             {
-                          
-                 recruit.RECRUIT_ID = data.RECRUIT_ID;
-                 recruit.EST_ID = data.EST_ID;
-                 recruit.EST_NAME = data.CREATED_BY;
-                 recruit.POSITION = data.POSITION;
-                 recruit.JOB_LOCATION = data.JOB_LOCATION;
-                 recruit.SKILLS_REQ = data.SKILLS_REQ;
-                 recruit.CREATED_DATE = data.CREATED_DATE;
-                 recruit.EST_NAME = data2.EST_NAME;
-                 recruit.JOB_DESC = data.JOB_DESC;
-                 recruit.REQ_CGPA = data.REQ_CGPA;
+
+                recruit.RECRUIT_ID = data.RECRUIT_ID;
+                recruit.EST_ID = data.EST_ID;
+                recruit.EST_NAME = data.CREATED_BY;
+                recruit.POSITION = data.POSITION;
+                recruit.JOB_LOCATION = data.JOB_LOCATION;
+                recruit.SKILLS_REQ = data.SKILLS_REQ;
+                recruit.CREATED_DATE = data.CREATED_DATE;
+                recruit.EST_NAME = data2.EST_NAME;
+                recruit.JOB_DESC = data.JOB_DESC;
+                recruit.REQ_CGPA = data.REQ_CGPA;
 
                 db3.RECRUIT_APP_STATUS_CL.Add(recruit);
                 db3.SaveChanges();
 
+                recruit2.RECRUIT_ID = data.RECRUIT_ID;
+                recruit2.POSITION = data.POSITION;
+                recruit2.JOB_LOCATION = data.JOB_LOCATION;
+                recruit2.JOB_DESC = data.JOB_DESC;
+                recruit2.SKILLS_REQ = data.SKILLS_REQ;
+                recruit2.REQ_CGPA = data.REQ_CGPA;
+                recruit2.CREATED_DATE = data.CREATED_DATE;
+                recruit2.EST_ID_CY = data.EST_ID;
+
+                db4.RECRUIT_APP_STATUS_CY.Add(recruit2);
+                db4.SaveChanges();
             }
             return RedirectToAction("Index");
         }

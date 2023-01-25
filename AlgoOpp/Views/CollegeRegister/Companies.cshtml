@@ -45,60 +45,61 @@
             @Html.DisplayNameFor(model => model.RECRUIT_ID)
         </th>
         <th>
-          
+
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td  class="hidden">
-            @Html.DisplayFor(modelItem => item.EST_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EST_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.POSITION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JOB_LOCATION)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.JOB_DESC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SKILLS_REQ)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.REQ_CGPA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CREATED_DATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.APPLIED_DATE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.APP_STATUS)
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.EST_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EST_NAME)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.POSITION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_LOCATION)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JOB_DESC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SKILLS_REQ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.REQ_CGPA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CREATED_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APPLIED_DATE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APP_STATUS)
 
-        </td>
-        <td class="hidden">
-            @Html.DisplayFor(modelItem => item.RECRUIT_ID)
-        </td>
-        
-        <td>
-            @*<a href="~/CollegeRegister/Apply">Edit</a>*@
-            <button class="btn btn-default">
-                @Html.ActionLink("Apply", "Apply", new { id = item.NOTIFY_ID })
-            </button>
-            
-            @*@Html.ActionLink("Reject", "Reject")*@
-            @*@Html.ActionLink("Edit", "Edit", new { id=item.NOTIFY_ID }) |
-        @Html.ActionLink("Details", "Details", new { id=item.NOTIFY_ID }) |
-        @Html.ActionLink("Delete", "Delete", new { id=item.NOTIFY_ID })*@
-        </td>
-    </tr>
-}
+            </td>
+            <td class="hidden">
+                @Html.DisplayFor(modelItem => item.RECRUIT_ID)
+            </td>
+
+            <td>
+                @*<a href="~/CollegeRegister/Apply">Edit</a>*@
+                <button class="btn btn-default">
+                    @Html.ActionLink("Apply", "Apply", new { id = item.NOTIFY_ID })
+                </button>
+
+                @*@Html.ActionLink("Reject", "Reject")*@
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.NOTIFY_ID }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.NOTIFY_ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id=item.NOTIFY_ID })*@
+            </td>
+        </tr>
+    }
 
 </table>
 <style>
@@ -127,6 +128,7 @@
         margin-right: 2px;
         margin-left: 2px;
     }
+
     a:link {
         text-decoration: none;
         color: black;

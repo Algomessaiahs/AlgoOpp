@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -56,8 +57,11 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.InteropServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Thread" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -192,6 +196,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Recruitment.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\RecruitmentAppStatusNotifyCompany.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentAppStatusNotifyCompany.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RecruitmentAppStatusNotifyCompany.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\RecruitmentStatusCall.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,6 +228,9 @@
     </Compile>
     <Compile Include="Models\RECRUIT_APP_STATUS_CL.cs">
       <DependentUpon>RecruitmentStatusCall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RECRUIT_APP_STATUS_CY.cs">
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\StudentDetails.Context.cs">
       <AutoGen>True</AutoGen>
@@ -275,6 +297,16 @@
       <DependentUpon>Recruitment.edmx</DependentUpon>
       <LastGenOutput>Recruitment1.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\RecruitmentAppStatusNotifyCompany.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentAppStatusNotifyCompany.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RecruitmentAppStatusNotifyCompany.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.edmx</DependentUpon>
+      <LastGenOutput>RecruitmentAppStatusNotifyCompany.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\RecruitmentStatusCall.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
@@ -332,6 +364,13 @@
     <Content Include="Models\StudentDetails.edmx.diagram">
       <DependentUpon>StudentDetails.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\RecruitmentAppStatusNotifyCompany.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RecruitmentAppStatusNotifyCompany.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RecruitmentAppStatusNotifyCompany.edmx.diagram">
+      <DependentUpon>RecruitmentAppStatusNotifyCompany.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -379,12 +418,12 @@
     <Content Include="Views\StudentDetails\Index.cshtml" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
     <Content Include="Views\Shared\_Notification.cshtml" />
-    <Content Include="Views\Recruitment\Send.cshtml" />
     <Content Include="Views\CollegeRegister\Companies.cshtml" />
     <Content Include="Views\CollegeRegister\Apply.cshtml" />
     <Content Include="Views\CompanyRegister\Notification.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\CompanyRegister\Approve.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -440,6 +479,7 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.3.3.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

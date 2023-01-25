@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RecruitmentAppStatusNotifyCompany.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="RECRUIT_APP_STATUS_CY">
+          <Key>
+            <PropertyRef Name="NOTIFY_ID_CY" />
+          </Key>
+          <Property Name="NOTIFY_ID_CY" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RECRUIT_ID" Type="int" />
+          <Property Name="POSITION" Type="varchar" MaxLength="50" />
+          <Property Name="JOB_LOCATION" Type="varchar" MaxLength="50" />
+          <Property Name="JOB_DESC" Type="varchar" MaxLength="1000" />
+          <Property Name="SKILLS_REQ" Type="varchar" MaxLength="100" />
+          <Property Name="REQ_CGPA" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="CREATED_DATE" Type="datetime" />
+          <Property Name="EST_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="APP_STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="APPROVAL_STATUS" Type="varchar" MaxLength="50" />
+          <Property Name="EST_ID_CY" Type="int" />
+          <Property Name="EST_ID_CL" Type="int" />
+          <Property Name="NOTIFY_ID_CL" Type="int" />
+        </EntityType>
+        <EntityContainer Name="RecruitmentAppStatusNotifyCompanyStoreContainer">
+          <EntitySet Name="RECRUIT_APP_STATUS_CY" EntityType="Self.RECRUIT_APP_STATUS_CY" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RecruitmentAppStatusNotifyCompany" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="RECRUIT_APP_STATUS_CY">
+          <Key>
+            <PropertyRef Name="NOTIFY_ID_CY" />
+          </Key>
+          <Property Name="NOTIFY_ID_CY" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RECRUIT_ID" Type="Int32" />
+          <Property Name="POSITION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JOB_LOCATION" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JOB_DESC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="SKILLS_REQ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="REQ_CGPA" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
+          <Property Name="EST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APP_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="APPROVAL_STATUS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EST_ID_CY" Type="Int32" />
+          <Property Name="EST_ID_CL" Type="Int32" />
+          <Property Name="NOTIFY_ID_CL" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="RecruitmentAppStatusNotify_CY" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="RECRUIT_APP_STATUS_CY" EntityType="Self.RECRUIT_APP_STATUS_CY" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RecruitmentAppStatusNotifyCompanyStoreContainer" CdmEntityContainer="RecruitmentAppStatusNotify_CY">
+          <EntitySetMapping Name="RECRUIT_APP_STATUS_CY">
+            <EntityTypeMapping TypeName="RecruitmentAppStatusNotifyCompany.RECRUIT_APP_STATUS_CY">
+              <MappingFragment StoreEntitySet="RECRUIT_APP_STATUS_CY">
+                <ScalarProperty Name="NOTIFY_ID_CY" ColumnName="NOTIFY_ID_CY" />
+                <ScalarProperty Name="RECRUIT_ID" ColumnName="RECRUIT_ID" />
+                <ScalarProperty Name="POSITION" ColumnName="POSITION" />
+                <ScalarProperty Name="JOB_LOCATION" ColumnName="JOB_LOCATION" />
+                <ScalarProperty Name="JOB_DESC" ColumnName="JOB_DESC" />
+                <ScalarProperty Name="SKILLS_REQ" ColumnName="SKILLS_REQ" />
+                <ScalarProperty Name="REQ_CGPA" ColumnName="REQ_CGPA" />
+                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
+                <ScalarProperty Name="EST_NAME" ColumnName="EST_NAME" />
+                <ScalarProperty Name="APP_STATUS" ColumnName="APP_STATUS" />
+                <ScalarProperty Name="APPROVAL_STATUS" ColumnName="APPROVAL_STATUS" />
+                <ScalarProperty Name="EST_ID_CY" ColumnName="EST_ID_CY" />
+                <ScalarProperty Name="EST_ID_CL" ColumnName="EST_ID_CL" />
+                <ScalarProperty Name="NOTIFY_ID_CL" ColumnName="NOTIFY_ID_CL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
