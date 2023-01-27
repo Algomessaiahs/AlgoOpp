@@ -136,6 +136,7 @@
     <Compile Include="Controllers\College\StudentDetailsController.cs" />
     <Compile Include="Controllers\Company\CompanyRegisterController.cs" />
     <Compile Include="Controllers\College\CollegeRegisterController.cs" />
+    <Compile Include="Controllers\Company\INTERVIEW_STATUS_CYController.cs" />
     <Compile Include="Controllers\Company\RecruitmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +177,42 @@
     </Compile>
     <Compile Include="Models\COMPANY_DETAILS.cs">
       <DependentUpon>Company.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InterviewDetails.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InterviewDetails.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InterviewDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InterviewDetails.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\InterviewDetails.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InterviewDetails.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERVIEW_STATUS_CL.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTERVIEW_STATUS_CL.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERVIEW_STATUS_CL.cs">
+      <DependentUpon>INTERVIEW_STATUS_CL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERVIEW_STATUS_CL.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTERVIEW_STATUS_CL.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERVIEW_STATUS_CL1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>INTERVIEW_STATUS_CL.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\INTERVIEW_STATUS_CY.cs">
+      <DependentUpon>InterviewDetails.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Membership.cs" />
     <Compile Include="Models\Recruitment.Context.cs">
@@ -253,19 +290,33 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Home\About.css" />
     <Content Include="Content\About.png" />
     <Content Include="Content\About2.png" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Company.png" />
+    <Content Include="Content\Home\Contact.css" />
     <Content Include="Content\Contact.png" />
     <Content Include="Content\Dashboard.png" />
     <Content Include="Content\Home.png" />
+    <Content Include="Content\Home\Index.css" />
     <Content Include="Content\Logo2.png" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\College.Context.tt">
@@ -287,6 +338,26 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Company.edmx</DependentUpon>
       <LastGenOutput>Company.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\InterviewDetails.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InterviewDetails.edmx</DependentUpon>
+      <LastGenOutput>InterviewDetails.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\InterviewDetails.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>InterviewDetails.edmx</DependentUpon>
+      <LastGenOutput>InterviewDetails.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\INTERVIEW_STATUS_CL.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>INTERVIEW_STATUS_CL.edmx</DependentUpon>
+      <LastGenOutput>INTERVIEW_STATUS_CL.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\INTERVIEW_STATUS_CL.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>INTERVIEW_STATUS_CL.edmx</DependentUpon>
+      <LastGenOutput>INTERVIEW_STATUS_CL1.cs</LastGenOutput>
     </Content>
     <Content Include="Models\Recruitment.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -328,8 +399,6 @@
       <DependentUpon>StudentDetails.edmx</DependentUpon>
       <LastGenOutput>StudentDetails.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Company.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Company.Designer.cs</LastGenOutput>
@@ -372,6 +441,48 @@
     <Content Include="Models\StudentDetails.edmx.diagram">
       <DependentUpon>StudentDetails.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\InterviewDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>InterviewDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\InterviewDetails.edmx.diagram">
+      <DependentUpon>InterviewDetails.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\INTERVIEW_STATUS_CL.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>INTERVIEW_STATUS_CL.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\INTERVIEW_STATUS_CL.edmx.diagram">
+      <DependentUpon>INTERVIEW_STATUS_CL.edmx</DependentUpon>
+    </Content>
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -411,7 +522,6 @@
     <Content Include="Views\Recruitment\Details.cshtml" />
     <Content Include="Views\Recruitment\Edit.cshtml" />
     <Content Include="Views\Recruitment\Index.cshtml" />
-    <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
     <Content Include="Views\StudentDetails\Delete.cshtml" />
     <Content Include="Views\StudentDetails\Details.cshtml" />
     <Content Include="Views\StudentDetails\Edit.cshtml" />
@@ -425,19 +535,18 @@
     <Content Include="Views\CompanyRegister\Approve.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\StudentDetails\Create.cshtml" />
+    <Content Include="Views\INTERVIEW_STATUS_CY\Create.cshtml" />
+    <Content Include="Views\INTERVIEW_STATUS_CY\Delete.cshtml" />
+    <Content Include="Views\INTERVIEW_STATUS_CY\Details.cshtml" />
+    <Content Include="Views\INTERVIEW_STATUS_CY\Edit.cshtml" />
+    <Content Include="Views\INTERVIEW_STATUS_CY\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />

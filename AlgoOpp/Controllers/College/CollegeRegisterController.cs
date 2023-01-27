@@ -14,10 +14,12 @@ namespace AlgoOpp.Controllers
         TechathonDB_user11Entities3 db3 = new TechathonDB_user11Entities3();
         RecruitmentAppStatusNotify_CY db = new RecruitmentAppStatusNotify_CY();
         TechathonDB_user11Entities db1 = new TechathonDB_user11Entities();
+        TechathonDB_user11Entities6 db2 = new TechathonDB_user11Entities6();
+
+
         // GET: CollegeRegister
         public ActionResult Login()
         {
-
             Session.Abandon();
             return View();
         }
@@ -35,10 +37,7 @@ namespace AlgoOpp.Controllers
                 }
                 else
                 {
-
                     Session["model"] = model;
-
-
 
                     return RedirectToAction("DashBoard", "CollegeRegister");
                 }
@@ -79,6 +78,7 @@ namespace AlgoOpp.Controllers
             return View(db3.RECRUIT_APP_STATUS_CL.ToList());
 
         }
+
         [Route("[action]/{id}")]
         [HttpGet]
         public ActionResult Apply(int id)
@@ -136,12 +136,18 @@ namespace AlgoOpp.Controllers
         }
         public ActionResult StudentStatus()
         {
-            return View();
+            var session = (AlgoOpp.Models.Membership)Session["model"];
+            var data = session.Email_id;
+            var data2 = db1.COLLEGE_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data.ToString());
+            var data3 = data2.EST_ID;
+            return View(db2.INTERVIEW_STATUS_CL.Where(x => x.EST_ID_CL == data3).ToList());
         }
+
         [ChildActionOnly]
         public ActionResult Notification()
         {
             return PartialView("_Notification");
         }
+       
     }
 }

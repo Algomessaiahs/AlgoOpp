@@ -169,6 +169,7 @@ namespace AlgoOpp.Controllers.Company
             var session = (AlgoOpp.Models.Membership)Session["model"];
             var data3 = session.Email_id;
             var data2 = db2.COMPANY_DETAILS.FirstOrDefault(x => x.EMAIL_ID == data3.ToString());
+
             if (data != null)
             {
 

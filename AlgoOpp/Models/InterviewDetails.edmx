@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TechathonDB_user11Model5.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="INTERVIEW_STATUS_CY">
+          <Key>
+            <PropertyRef Name="INTERVIEW_ID" />
+          </Key>
+          <Property Name="INTERVIEW_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="STUD_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="EMAIL_ID" Type="varchar" MaxLength="255" />
+          <Property Name="MOBILE" Type="bigint" />
+          <Property Name="DEPARTMENT" Type="varchar" MaxLength="255" />
+          <Property Name="YEAR" Type="varchar" MaxLength="255" />
+          <Property Name="CGPA" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="APTITUDE_ROUND" Type="varchar" MaxLength="255" />
+          <Property Name="TECHNICAL_ROUND" Type="varchar" MaxLength="255" />
+          <Property Name="HR_ROUND" Type="varchar" MaxLength="255" />
+          <Property Name="APP_STATUS" Type="varchar" MaxLength="255" />
+          <Property Name="STUD_ID" Type="int" />
+          <Property Name="EST_ID_CY" Type="int" />
+          <Property Name="EST_ID_CL" Type="int" />
+          <Property Name="NOTIFY_ID_CL" Type="int" />
+          <Property Name="NOTIFY_ID_CY" Type="int" />
+          <Property Name="RECRUIT_ID_CY" Type="int" />
+        </EntityType>
+        <EntityContainer Name="TechathonDB_user11Model5StoreContainer">
+          <EntitySet Name="INTERVIEW_STATUS_CY" EntityType="Self.INTERVIEW_STATUS_CY" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TechathonDB_user11Model5" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="INTERVIEW_STATUS_CY">
+          <Key>
+            <PropertyRef Name="INTERVIEW_ID" />
+          </Key>
+          <Property Name="INTERVIEW_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="STUD_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="MOBILE" Type="Int64" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="YEAR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CGPA" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="APTITUDE_ROUND" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TECHNICAL_ROUND" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HR_ROUND" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="APP_STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="STUD_ID" Type="Int32" />
+          <Property Name="EST_ID_CY" Type="Int32" />
+          <Property Name="EST_ID_CL" Type="Int32" />
+          <Property Name="NOTIFY_ID_CL" Type="Int32" />
+          <Property Name="NOTIFY_ID_CY" Type="Int32" />
+          <Property Name="RECRUIT_ID_CY" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TechathonDB_user11Entities5" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="INTERVIEW_STATUS_CY" EntityType="Self.INTERVIEW_STATUS_CY" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TechathonDB_user11Model5StoreContainer" CdmEntityContainer="TechathonDB_user11Entities5">
+          <EntitySetMapping Name="INTERVIEW_STATUS_CY">
+            <EntityTypeMapping TypeName="TechathonDB_user11Model5.INTERVIEW_STATUS_CY">
+              <MappingFragment StoreEntitySet="INTERVIEW_STATUS_CY">
+                <ScalarProperty Name="INTERVIEW_ID" ColumnName="INTERVIEW_ID" />
+                <ScalarProperty Name="STUD_NAME" ColumnName="STUD_NAME" />
+                <ScalarProperty Name="EMAIL_ID" ColumnName="EMAIL_ID" />
+                <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="CGPA" ColumnName="CGPA" />
+                <ScalarProperty Name="APTITUDE_ROUND" ColumnName="APTITUDE_ROUND" />
+                <ScalarProperty Name="TECHNICAL_ROUND" ColumnName="TECHNICAL_ROUND" />
+                <ScalarProperty Name="HR_ROUND" ColumnName="HR_ROUND" />
+                <ScalarProperty Name="APP_STATUS" ColumnName="APP_STATUS" />
+                <ScalarProperty Name="STUD_ID" ColumnName="STUD_ID" />
+                <ScalarProperty Name="EST_ID_CY" ColumnName="EST_ID_CY" />
+                <ScalarProperty Name="EST_ID_CL" ColumnName="EST_ID_CL" />
+                <ScalarProperty Name="NOTIFY_ID_CL" ColumnName="NOTIFY_ID_CL" />
+                <ScalarProperty Name="NOTIFY_ID_CY" ColumnName="NOTIFY_ID_CY" />
+                <ScalarProperty Name="RECRUIT_ID_CY" ColumnName="RECRUIT_ID_CY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

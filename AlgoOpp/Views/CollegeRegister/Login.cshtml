@@ -16,7 +16,7 @@
                     <form autocomplete="off">
                         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-                        <div class="form-group hidden">
+                        <div class="form-group visually-hidden">
 
                             <div class="">
                                 @Html.TextBoxFor(model => model.Est_Type, new { @class = "form-control", @Value = "College" })

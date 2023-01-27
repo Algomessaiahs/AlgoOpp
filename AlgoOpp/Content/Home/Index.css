@@ -1,0 +1,48 @@
+﻿table {
+    border: solid 2px azure;
+    border-radius: 20px;
+}
+
+th {
+    border: solid 2px azure;
+    background-color: black;
+    color: aliceblue;
+}
+
+td {
+    border: solid 2px azure;
+    background-color: darkslategray;
+    color: azure;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    margin-right: 2px;
+    margin-left: 2px;
+}
+
+#img {
+    width: 100%;
+    height: 500px;
+    margin-top: 70px;
+    border-radius: 20px;
+}
+
+h2 {
+    margin-top: 50px;
+}
+
+#img {
+    width: 100%;
+    height: 500px;
+    margin-top: 70px;
+    border-radius: 20px;
+}
+
+h2 {
+    margin-top: 50px;
+}

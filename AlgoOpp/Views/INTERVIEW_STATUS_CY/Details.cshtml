@@ -1,0 +1,147 @@
+﻿@model AlgoOpp.Models.INTERVIEW_STATUS_CY
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Layout_Company.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>INTERVIEW_STATUS_CY</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.STUD_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STUD_NAME)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EMAIL_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EMAIL_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MOBILE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOBILE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DEPARTMENT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DEPARTMENT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YEAR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YEAR)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CGPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CGPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APTITUDE_ROUND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APTITUDE_ROUND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TECHNICAL_ROUND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TECHNICAL_ROUND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HR_ROUND)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HR_ROUND)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.APP_STATUS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.APP_STATUS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STUD_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STUD_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_ID_CY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_ID_CY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EST_ID_CL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EST_ID_CL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTIFY_ID_CL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTIFY_ID_CL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NOTIFY_ID_CY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NOTIFY_ID_CY)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RECRUIT_ID_CY)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RECRUIT_ID_CY)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.INTERVIEW_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

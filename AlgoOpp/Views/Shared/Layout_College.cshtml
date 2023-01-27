@@ -1,14 +1,13 @@
-﻿
-@{
+﻿@{
 
     var session = (AlgoOpp.Models.Membership)Session["model"];
-    if (session==null)
+    if (session == null)
     {
         Response.Redirect("~/CollegeRegister/Login");
     }
-    if (string.Compare(session?.Est_Type , "Company",true)==0)
+    if (string.Compare(session?.Est_Type, "Company", true) == 0)
     {
-        Response.Redirect("~/CompanyRegister/Login"); 
+        Response.Redirect("~/CompanyRegister/Login");
     }
 
 }
@@ -21,33 +20,28 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
 
+</head>
+<body>
+    <div class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
         <div class="container-fluid">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
-                <img class=".navbar-brand" src="~/Content/Logo2.png" />
-
-            </div>
+            <img class=".navbar-brand" src="~/Content/Logo2.png" />
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="color:black; float:right;">
-                    <li>@Html.ActionLink("Dashboard", "DashBoard", "CollegeRegister")</li>
-                    <li>@Html.ActionLink("Student Details", "Index", "StudentDetails")</li>
-                    <li>@Html.ActionLink("Current Openings", "Companies", "CollegeRegister")</li>
-                    <li>@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Dashboard", "DashBoard", "CollegeRegister")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Student Details", "Index", "StudentDetails")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Current Openings", "Companies", "CollegeRegister")</li>
+                    <li class="nav-item nav-link">@Html.ActionLink("Student Status", "StudentStatus", "CollegeRegister")</li>
 
-                    <li class="dropdown">
+                    <li class="dropdown ms-auto mb-2 mb-lg-0">
                         <a class=" dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="javascript:;">Notifcation</a>
                         @{ Html.RenderAction("Notification", "CollegeRegister"); }
                     </li>
 
-                    <li><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Logout","CollegeRegister")">LogOut</a></li>
 
                 </ul>
             </div>
@@ -59,14 +53,11 @@
             height: 50px;
         }
     </style>
-</head>
-<body>
-    
 
     <div class="container body-content">
         @RenderBody()
         <hr />
-        
+
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -74,4 +65,3 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-

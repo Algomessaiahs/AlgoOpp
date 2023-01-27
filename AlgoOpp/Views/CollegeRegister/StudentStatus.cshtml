@@ -1,15 +1,127 @@
-﻿
+﻿@model IEnumerable<AlgoOpp.Models.INTERVIEW_STATUS_CL>
+
 @{
     ViewBag.Title = "StudentStatus";
-    //Layout = null;
-    //if (Session["EMAIL_ID"] == null)
-    //{
-    //    Response.Redirect("~/CollegeRegister/Login");
-    //}
-    //else
-    {
-        Layout = "~/Views/Shared/Layout_College.cshtml";
-    }
+    Layout = "~/Views/Shared/Layout_College.cshtml";
 }
-<h2>Student Status</h2>
 
+<h2>StudentStatus</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RECRUIT_ID_CY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STUD_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.STUD_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EMAIL_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MOBILE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DEPARTMENT)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YEAR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CGPA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.APTITUDE_ROUND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TECHNICAL_ROUND)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HR_ROUND)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.APP_STATUS)
+        </th>*@
+
+        @*<th>
+            @Html.DisplayNameFor(model => model.EST_ID_CY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EST_ID_CL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTIFY_ID_CL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOTIFY_ID_CY)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.INTERVIEW_ID_CY)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RECRUIT_ID_CY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STUD_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.STUD_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EMAIL_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MOBILE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DEPARTMENT)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YEAR)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CGPA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.APTITUDE_ROUND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TECHNICAL_ROUND)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HR_ROUND)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.APP_STATUS)
+        </td>*@
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.EST_ID_CY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EST_ID_CL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTIFY_ID_CL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOTIFY_ID_CY)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.INTERVIEW_ID_CY)
+        </td>*@        
+    </tr>
+}
+
+</table>
