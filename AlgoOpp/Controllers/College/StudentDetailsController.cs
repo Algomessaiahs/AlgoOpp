@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using AlgoOpp.Models;
+using System.Data.Entity.Validation;
+using System.Diagnostics;
 
 namespace AlgoOpp.Controllers.College
 {
@@ -14,7 +16,7 @@ namespace AlgoOpp.Controllers.College
     {
         private TechathonDB_user11Entities db1 = new TechathonDB_user11Entities();
 
-        TechathonDB_user11Entities4 db = new TechathonDB_user11Entities4();
+        StudentDetails db = new StudentDetails();
 
 
         // GET: StudentDetail
@@ -65,8 +67,12 @@ namespace AlgoOpp.Controllers.College
                 
                 sTUDENT_DETAILS.EST_NAME = data2.EST_NAME;
                 sTUDENT_DETAILS.EST_ID = data2.EST_ID;
+               
                 db.STUDENT_DETAILS.Add(sTUDENT_DETAILS);
                 db.SaveChanges();
+
+               
+                
                 return RedirectToAction("Index");
             }
 

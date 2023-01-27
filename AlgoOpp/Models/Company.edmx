@@ -4,25 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TechathonDB_user11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TechathonDB_user11Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="COMPANY_DETAILS">
           <Key>
             <PropertyRef Name="EST_ID" />
           </Key>
-          <Property Name="EST_TYPE" Type="varchar" MaxLength="10" />
-          <Property Name="EST_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="EMAIL_ID" Type="varchar" MaxLength="20" />
-          <Property Name="PASSWORD" Type="varchar" MaxLength="20" />
-          <Property Name="CITY" Type="varchar" MaxLength="20" />
-          <Property Name="ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="EST_TYPE" Type="varchar" MaxLength="255" />
+          <Property Name="EST_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="EMAIL_ID" Type="varchar" MaxLength="255" />
+          <Property Name="PASSWORD" Type="varchar" MaxLength="255" />
+          <Property Name="CITY" Type="varchar" MaxLength="255" />
+          <Property Name="ADDRESS" Type="varchar" MaxLength="255" />
           <Property Name="PINCODE" Type="int" />
           <Property Name="EST_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityContainer Name="TechathonDB_user11ModelStoreContainer">
           <EntitySet Name="COMPANY_DETAILS" EntityType="Self.COMPANY_DETAILS" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TechathonDB_user11Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -30,12 +29,12 @@
           <Key>
             <PropertyRef Name="EST_ID" />
           </Key>
-          <Property Name="EST_TYPE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="EST_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="EMAIL_ID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="PASSWORD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CITY" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EST_TYPE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EST_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ADDRESS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="PINCODE" Type="Int32" />
           <Property Name="EST_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>

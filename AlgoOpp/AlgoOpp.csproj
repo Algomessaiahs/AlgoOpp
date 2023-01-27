@@ -358,19 +358,19 @@
     <Content Include="Models\RecruitmentStatusCall.edmx.diagram">
       <DependentUpon>RecruitmentStatusCall.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\StudentDetails.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>StudentDetails.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\StudentDetails.edmx.diagram">
-      <DependentUpon>StudentDetails.edmx</DependentUpon>
-    </Content>
     <EntityDeploy Include="Models\RecruitmentAppStatusNotifyCompany.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>RecruitmentAppStatusNotifyCompany.Designer.cs</LastGenOutput>
     </EntityDeploy>
     <Content Include="Models\RecruitmentAppStatusNotifyCompany.edmx.diagram">
       <DependentUpon>RecruitmentAppStatusNotifyCompany.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\StudentDetails.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StudentDetails.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\StudentDetails.edmx.diagram">
+      <DependentUpon>StudentDetails.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -412,7 +412,6 @@
     <Content Include="Views\Recruitment\Edit.cshtml" />
     <Content Include="Views\Recruitment\Index.cshtml" />
     <Content Include="Views\CollegeRegister\StudentStatus.cshtml" />
-    <Content Include="Views\StudentDetails\Create.cshtml" />
     <Content Include="Views\StudentDetails\Delete.cshtml" />
     <Content Include="Views\StudentDetails\Details.cshtml" />
     <Content Include="Views\StudentDetails\Edit.cshtml" />
@@ -425,6 +424,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\CompanyRegister\Approve.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\StudentDetails\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

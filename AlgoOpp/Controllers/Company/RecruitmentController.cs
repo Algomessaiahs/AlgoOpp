@@ -16,7 +16,7 @@ namespace AlgoOpp.Controllers.Company
     public class RecruitmentController : Controller
     {
         private TechathonDB_user11Entities1 db = new TechathonDB_user11Entities1();
-        private TechathonDB_user11Model2 db2 = new TechathonDB_user11Model2();
+        private TechathonDB_user11Entities2 db2 = new TechathonDB_user11Entities2();
         private TechathonDB_user11Entities3 db3 = new TechathonDB_user11Entities3();
         private RecruitmentAppStatusNotify_CY db4 = new RecruitmentAppStatusNotify_CY();
 

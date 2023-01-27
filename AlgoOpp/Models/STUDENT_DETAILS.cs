@@ -15,7 +15,7 @@ namespace AlgoOpp.Models
 
     public partial class STUDENT_DETAILS
     {
-        [DisplayName("stud id")]
+        [DisplayName("Stud_id")]
         public int STUD_ID { get; set; }
         [DisplayName("Name")]
         public string NAME { get; set; }
@@ -31,8 +31,7 @@ namespace AlgoOpp.Models
         public Nullable<decimal> CGPA { get; set; }
         [DisplayName("College Name")]
         public string EST_NAME { get; set; }
-        [DisplayName("Est Id")]
+        [DisplayName("Est_id")]
         public Nullable<int> EST_ID { get; set; }
-
     }
 }

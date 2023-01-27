@@ -4,29 +4,28 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="TechathonDB_user11Model3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="TechathonDB_user11Model3.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="RECRUIT_APP_STATUS_CL">
           <Key>
             <PropertyRef Name="NOTIFY_ID" />
           </Key>
           <Property Name="NOTIFY_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="EST_ID" Type="int" />
-          <Property Name="EST_NAME" Type="varchar" MaxLength="20" />
-          <Property Name="POSITION" Type="varchar" MaxLength="20" />
-          <Property Name="JOB_LOCATION" Type="varchar" MaxLength="20" />
+          <Property Name="EST_NAME" Type="varchar" MaxLength="255" />
+          <Property Name="POSITION" Type="varchar" MaxLength="255" />
+          <Property Name="JOB_LOCATION" Type="varchar" MaxLength="255" />
           <Property Name="JOB_DESC" Type="varchar" MaxLength="1000" />
-          <Property Name="SKILLS_REQ" Type="varchar" MaxLength="100" />
+          <Property Name="SKILLS_REQ" Type="varchar" MaxLength="255" />
           <Property Name="REQ_CGPA" Type="decimal" Precision="5" Scale="2" />
           <Property Name="CREATED_DATE" Type="datetime" />
           <Property Name="APPLIED_DATE" Type="datetime" />
-          <Property Name="APP_STATUS" Type="varchar" MaxLength="20" />
+          <Property Name="APP_STATUS" Type="varchar" MaxLength="255" />
           <Property Name="RECRUIT_ID" Type="int" />
         </EntityType>
         <EntityContainer Name="TechathonDB_user11Model3StoreContainer">
           <EntitySet Name="RECRUIT_APP_STATUS_CL" EntityType="Self.RECRUIT_APP_STATUS_CL" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TechathonDB_user11Model3" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -36,15 +35,15 @@
           </Key>
           <Property Name="NOTIFY_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="EST_ID" Type="Int32" />
-          <Property Name="EST_NAME" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="POSITION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="JOB_LOCATION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EST_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="POSITION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="JOB_LOCATION" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="JOB_DESC" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
-          <Property Name="SKILLS_REQ" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SKILLS_REQ" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="REQ_CGPA" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="CREATED_DATE" Type="DateTime" Precision="3" />
           <Property Name="APPLIED_DATE" Type="DateTime" Precision="3" />
-          <Property Name="APP_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="APP_STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="RECRUIT_ID" Type="Int32" />
         </EntityType>
         <EntityContainer Name="TechathonDB_user11Entities3" annotation:LazyLoadingEnabled="true">

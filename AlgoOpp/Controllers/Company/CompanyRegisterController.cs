@@ -22,7 +22,7 @@ namespace AlgoOpp.Controllers
         [HttpPost]
         public ActionResult Login(Models.Membership model)
         {
-            using (var data = new TechathonDB_user11Model2())
+            using (var data = new TechathonDB_user11Entities2())
             {
 
                 var UserDetail = data.COMPANY_DETAILS.Where(x => x.EST_TYPE == model.Est_Type && x.EMAIL_ID == model.Email_id && x.PASSWORD == model.Password).FirstOrDefault();
@@ -49,7 +49,7 @@ namespace AlgoOpp.Controllers
         public ActionResult Register(COMPANY_DETAILS model)
         {
             ViewBag.Message = "Company";
-            using (var data = new TechathonDB_user11Model2())
+            using (var data = new TechathonDB_user11Entities2())
             {
                 data.COMPANY_DETAILS.Add(model);
                 data.SaveChanges();

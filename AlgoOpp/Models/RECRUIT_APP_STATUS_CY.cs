@@ -15,9 +15,9 @@ namespace AlgoOpp.Models
 
     public partial class RECRUIT_APP_STATUS_CY
     {
-        [DisplayName("Notify id")]
+        [DisplayName("Notify id_CY")]
         public int NOTIFY_ID_CY { get; set; }
-        [DisplayName("Recrui id")]
+        [DisplayName("Recruit id")]
         public Nullable<int> RECRUIT_ID { get; set; }
         [DisplayName("Position")]
         public string POSITION { get; set; }
@@ -31,9 +31,9 @@ namespace AlgoOpp.Models
         public Nullable<decimal> REQ_CGPA { get; set; }
         [DisplayName("Created Date")]
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
-        [DisplayName("College Name")]
+        [DisplayName("Company Name")]
         public string EST_NAME { get; set; }
-        [DisplayName("App Status")]
+        [DisplayName("App_status")]
         public string APP_STATUS { get; set; }
         [DisplayName("Status")]
         public string APPROVAL_STATUS { get; set; }

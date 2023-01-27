@@ -32,7 +32,7 @@
         <th>
             @Html.DisplayNameFor(model => model.CGPA)
         </th>
-        <th>
+        <th class="hidden">
             @Html.DisplayNameFor(model => model.EST_NAME)
         </th>
         <th class="hidden">
@@ -62,7 +62,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CGPA)
             </td>
-            <td>
+            <td class="hidden">
                 @Html.DisplayFor(modelItem => item.EST_NAME)
             </td>
             <td class="hidden">
@@ -89,6 +89,7 @@
 <style>
     table {
         border: solid 2px azure;
+        border-radius: 20px;
     }
 
     th {

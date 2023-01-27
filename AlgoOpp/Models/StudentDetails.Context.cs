@@ -13,10 +13,10 @@ namespace AlgoOpp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TechathonDB_user11Entities4 : DbContext
+    public partial class StudentDetails : DbContext
     {
-        public TechathonDB_user11Entities4()
-            : base("name=TechathonDB_user11Entities4")
+        public StudentDetails()
+            : base("name=StudentDetails")
         {
         }
     

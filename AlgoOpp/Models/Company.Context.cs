@@ -13,9 +13,9 @@ namespace AlgoOpp.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class TechathonDB_user11Model2 : DbContext
+    public partial class TechathonDB_user11Entities2 : DbContext
     {
-        public TechathonDB_user11Model2()
+        public TechathonDB_user11Entities2()
             : base("name=TechathonDB_user11Entities2")
         {
         }
