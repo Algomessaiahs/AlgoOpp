@@ -12,14 +12,19 @@ namespace AlgoOpp.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class COLLEGE_DETAILS
     {
         [DisplayName("Type")]
         public string EST_TYPE { get; set; }
         [DisplayName("College Name")]
+        [Required(ErrorMessage = "College is required")]
         public string EST_NAME { get; set; }
         [DisplayName("Email_id")]
+        [Required(ErrorMessage = "Email Id is required")]
+        [RegularExpression("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*$",
+        ErrorMessage = " Please enter correct email address.")]
         public string EMAIL_ID { get; set; }
         [DisplayName("Password")]
         public string PASSWORD { get; set; }
@@ -31,5 +36,7 @@ namespace AlgoOpp.Models
         public Nullable<int> PINCODE { get; set; }
         [DisplayName("Est_id")]
         public int EST_ID { get; set; }
+
     }
+      
 }

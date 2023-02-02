@@ -145,9 +145,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input style="margin-right: 10px;" type="submit" value="Delete" class="btn btn-primary" /> |
+    <a class="btn btn-light" style="margin-left:10px; float:initial" href="@Url.Action("Index", "INTERVIEW_STATUS_CY")">Back to List</a>
+</div>
     }
 </div>

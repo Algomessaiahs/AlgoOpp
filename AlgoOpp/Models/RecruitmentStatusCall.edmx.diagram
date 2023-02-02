@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="ce17667401734246b5b78bc39e2ed154" Name="Diagram1">
-        <EntityTypeShape EntityType="TechathonDB_user11Model3.RECRUIT_APP_STATUS_CL" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TechathonDB_user11Model3.RECRUIT_APP_STATUS_CL" Width="3" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

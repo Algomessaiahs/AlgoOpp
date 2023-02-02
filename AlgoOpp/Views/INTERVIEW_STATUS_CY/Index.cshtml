@@ -4,45 +4,42 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
-
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+@Styles.Render("~/Content/Table")
+<h2>Interview Status</h2>
+<br />
+<table class="table container-fluid">
     <tr>
-        <th>
+        <th id="th10">
             @Html.DisplayNameFor(model => model.RECRUIT_ID_CY)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.STUD_ID)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.STUD_NAME)
         </th>
-        <th>
+        <th id="th1" class="visually-hidden">
             @Html.DisplayNameFor(model => model.EMAIL_ID)
         </th>
-        <th>
+        <th id="th1" class="visually-hidden">
             @Html.DisplayNameFor(model => model.MOBILE)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.DEPARTMENT)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.YEAR)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.CGPA)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.APTITUDE_ROUND)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.TECHNICAL_ROUND)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.HR_ROUND)
         </th>
         @*<th>
@@ -62,49 +59,54 @@
             @Html.DisplayNameFor(model => model.NOTIFY_ID_CY)
         </th>
         *@
-        <th></th>
+        <th id="th1"></th>
+        <th id="th1"></th>
+        <th id="th1"></th>
+        <th id="th11"></th>
+
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RECRUIT_ID_CY)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STUD_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.STUD_NAME)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EMAIL_ID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MOBILE)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DEPARTMENT)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.YEAR)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CGPA)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.APTITUDE_ROUND)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TECHNICAL_ROUND)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.HR_ROUND)
-        </td>
-        <td>
+    @foreach (var item in Model)
+    {
+        <tr id="td">
+            <td>
+                @Html.DisplayFor(modelItem => item.RECRUIT_ID_CY)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STUD_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.STUD_NAME)
+            </td>
+            <td class="visually-hidden">
+                @Html.DisplayFor(modelItem => item.EMAIL_ID)
+            </td>
+            <td class="visually-hidden">
+                @Html.DisplayFor(modelItem => item.MOBILE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DEPARTMENT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YEAR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CGPA)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.APTITUDE_ROUND)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TECHNICAL_ROUND)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HR_ROUND)
+            </td>
+            @*<td>*@
             @*@Html.DisplayFor(modelItem => item.APP_STATUS)*@
-        </td>
+            @*</td>*@
 
-        @*<td>
+            @*<td>
             @Html.DisplayFor(modelItem => item.EST_ID_CY)
         </td>
         <td>
@@ -116,13 +118,21 @@
         <td>
             @Html.DisplayFor(modelItem => item.NOTIFY_ID_CY)
         </td>
-        *@
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.INTERVIEW_ID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.INTERVIEW_ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.INTERVIEW_ID })
-        </td>
-    </tr>
-}
+            *@
+            <td id="td">
+
+                <a class="btn btn-primary" href="@Url.Action("Edit", "INTERVIEW_STATUS_CY", new { id = item.INTERVIEW_ID })">Edit</a>
+            </td>
+            <td id="td">
+                <a class="btn btn-secondary" href="@Url.Action("Details", "INTERVIEW_STATUS_CY", new { id = item.INTERVIEW_ID })">Details</a>
+            </td>
+            <td id="td">
+                <a class="btn btn-danger" href="@Url.Action("Delete", "INTERVIEW_STATUS_CY", new { id = item.INTERVIEW_ID })">Delete</a>
+            </td>
+            <td id="td">
+                <a class="btn btn-success" href="@Url.Action("Index", "INTERVIEW_STATUS_CY", new { id = item.INTERVIEW_ID })">Offer</a>
+            </td>
+        </tr>
+    }
 
 </table>

@@ -291,8 +291,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Home\About.css" />
-    <Content Include="Content\About.png" />
-    <Content Include="Content\About2.png" />
+    <Content Include="Content\Table.css" />
+    <Content Include="Content\Image\About.png" />
+    <Content Include="Content\Image\About2.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -309,13 +310,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\Company.png" />
+    <Content Include="Content\Image\Company.png" />
     <Content Include="Content\Home\Contact.css" />
-    <Content Include="Content\Contact.png" />
-    <Content Include="Content\Dashboard.png" />
-    <Content Include="Content\Home.png" />
+    <Content Include="Content\Image\Contact.png" />
+    <Content Include="Content\Image\Dashboard.png" />
+    <Content Include="Content\Image\Home.png" />
     <Content Include="Content\Home\Index.css" />
-    <Content Include="Content\Logo2.png" />
+    <Content Include="Content\Image\Logo2.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

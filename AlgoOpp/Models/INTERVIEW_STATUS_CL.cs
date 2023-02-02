@@ -11,7 +11,8 @@ namespace AlgoOpp.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class INTERVIEW_STATUS_CL
     {
         public int INTERVIEW_ID_CL { get; set; }
@@ -30,6 +31,7 @@ namespace AlgoOpp.Models
         public Nullable<int> EST_ID_CL { get; set; }
         public Nullable<int> NOTIFY_ID_CL { get; set; }
         public Nullable<int> NOTIFY_ID_CY { get; set; }
+        [DisplayName("Recruit ID")]
         public Nullable<int> RECRUIT_ID_CY { get; set; }
         public Nullable<int> INTERVIEW_ID_CY { get; set; }
     }

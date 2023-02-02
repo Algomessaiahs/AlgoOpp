@@ -29,6 +29,8 @@ namespace AlgoOpp
                          "~/Content/Home/About.css",
                          "~/Content/Home/Index.css",
                          "~/Content/Home/Contact.css"));
+            bundles.Add(new StyleBundle("~/Content/Table").Include(
+                        "~/Content/Table.css"));
         }
     }
 }

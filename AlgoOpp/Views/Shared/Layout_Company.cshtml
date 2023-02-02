@@ -24,33 +24,101 @@
 <body>
     <div class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
         <div class="container-fluid">
-            <img class=".navbar-brand" src="~/Content/Logo2.png" />
+            <img class=".navbar-brand" src="~/Content/Image/Logo2.png" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="color:blueviolet; float:right;">
-                    <li class="nav-item nav-link">@Html.ActionLink("Dashboard", "DashBoard", "CompanyRegister")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("Recruitment", "Index", "Recruitment")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("Notification", "Notification", "CompanyRegister")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("Check Status", "Index", "INTERVIEW_STATUS_CY")</li>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color:blueviolet; float:right;">
+                    <li class="nav-item nav-link active"><a id="a" href="@Url.Action("DashBoard", "CompanyRegister")">Dashboard</a></li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("Index", "Recruitment")">Recruitment</a></li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("Notification", "CompanyRegister")">Check Status</a></li>
+                    @*<li class="nav-item nav-link mx-4">@Html.ActionLink("Check Status", "Notification", "CompanyRegister")</li>*@
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("Index", "INTERVIEW_STATUS_CY")">Interview Status</a></li>
+                    @*<li class="nav-item nav-link mx-4">@Html.ActionLink("Interview Status", "Index", "INTERVIEW_STATUS_CY")</li>*@
 
                     @*<li>@Html.ActionLink("LogOut", "LogOut", "Home")</li>*@
-                    <li><a href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
+                    <li class="nav-item nav-link"><a id="a" href="@Url.Action("Logout","CompanyRegister")">LogOut</a></li>
 
                 </ul>
             </div>
         </div>
     </div>
     <style>
+        a{
+            text-decoration:none;
+        }
         img {
             width: 200px;
             height: 50px;
         }
+
+        #a {
+            color: aliceblue;
+            padding-left: 20px;
+            padding-right: 20px;
+            /* padding-top: 25px;
+            padding-bottom: 25px;*/
+        }
+
+        .nav-link:hover,
+        .nav-link:focus {
+            /* background-color:darkslategrey;*/
+            padding-left: 2px;
+            padding-right: 2px;
+            /* margin-bottom: 5px;*/
+            /*position: fixed;
+            color: black;
+            border-top: 20px;*/
+            /* border: none;
+            outline: none;*/
+            cursor: pointer;
+        }
+        /*.btn-link::active {
+            background-color: aliceblue;
+        }
+        .btn-link:hover {
+            background-color: aliceblue;
+        }
+        .btn-link:focus {
+            background-color: aliceblue;
+        }*/
+        /* a.a {
+            background-color:cadetblue;
+            color: white;
+        }*/
+        /* #navbarSupportedContent > ul > li.active > a {
+            color: #5161ce;
+            background-color: transparent;
+            transition: all 0.7s;
+        }*/
+        /*#navbarSupportedContent {
+            overflow: hidden;
+            position: relative;
+        }*/
+        /**, ::after, ::before {
+            box-sizing: border-box;
+        }*/
+        /*body {
+            font-family: 'Roboto', sans-serif;
+        }*/
+        /**, ::after, ::before {
+            box-sizing: border-box;
+        }*/
+        /*nav li{
+            margin-right:5px;
+        }
+        .navbar-mainbg {
+            background-color: #5161ce;
+            padding: 0px;
+        }*/
+        header, body, footer {
+            background-color: lightcyan;
+        }
     </style>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
 
     </div>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>

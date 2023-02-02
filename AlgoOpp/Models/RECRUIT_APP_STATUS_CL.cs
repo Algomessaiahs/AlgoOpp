@@ -16,29 +16,18 @@ namespace AlgoOpp.Models
 
     public partial class RECRUIT_APP_STATUS_CL
     {
-        [DisplayName("Notify_id")]
         public int NOTIFY_ID { get; set; }
-        [DisplayName("Est_id")]
         public Nullable<int> EST_ID { get; set; }
-        [DisplayName("College Name")]
         public string EST_NAME { get; set; }
-        [DisplayName("Position")]
         public string POSITION { get; set; }
-        [DisplayName("Job Location")]
         public string JOB_LOCATION { get; set; }
-        [DisplayName("Job Description")]
         public string JOB_DESC { get; set; }
-        [DisplayName("Skills Required")]
         public string SKILLS_REQ { get; set; }
-        [DisplayName("Required CGPA")]
         public Nullable<decimal> REQ_CGPA { get; set; }
-        [DisplayName("Created Date")]
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
-        [DisplayName("Applied Date")]
         public Nullable<System.DateTime> APPLIED_DATE { get; set; }
-        [DisplayName("Status")]
         public string APP_STATUS { get; set; }
-        [DisplayName("Recruit_id")]
+        [DisplayName("Recruit ID")]
         public Nullable<int> RECRUIT_ID { get; set; }
     }
 }

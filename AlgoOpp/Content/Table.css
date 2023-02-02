@@ -1,0 +1,29 @@
+﻿#th1 {
+    /*background-color: #6c7ae0;*/
+    background-color:black;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+}
+
+#th10 {
+    background-color: black;
+    color: white;
+    border-top-left-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+}
+
+#th11 {
+    background-color: black;
+    color: white;
+    border-top-right-radius: 15px;
+    text-align: center;
+    justify-content: center;
+    height: 50px;
+}
+#td {
+    background-color:lemonchiffon;
+}

@@ -10,20 +10,20 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color:darkslategray; font-family: 'Bookman Old Style';">
         <div class="container-fluid">
-            <img class=".navbar-brand" src="~/Content/Logo2.png" />
+            <img class=".navbar-brand" src="~/Content/Image/Logo2.png" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav" style="color:black; float:left;">
-                    <li class="nav-item nav-link">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("Contact Us", "Contact", "Home")</li>
+                <ul class="navbar-nav mb-2 mb-lg-0 mx-2" style="color:black; float:left;">
+                    <li class="nav-item nav-link active"><a id="a" style="text-decoration:none;" href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("About", "Home")">About Us</a></li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("Contact", "Home")">Contact Us</a></li>
 
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color:black; float:right;">
-                    <li class="nav-item nav-link">@Html.ActionLink("College", "College", "Home")</li>
-                    <li class="nav-item nav-link">@Html.ActionLink("Company", "Company", "Home")</li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("College", "Home")">College</a></li>
+                    <li class="nav-item "><a id="a" class="nav-link" href="@Url.Action("Company", "Home")">Company</a></li>
 
                 </ul>
             </div>
@@ -31,13 +31,77 @@
     </nav>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+       
 
     </div>
     <style>
         img {
             width: 200px;
             height: 50px;
+        }
+        #a {
+            color: aliceblue;
+            padding-left: 20px;
+            padding-right: 20px;
+           /* padding-top: 25px;
+            padding-bottom: 25px;*/
+        }
+
+        .nav-link:hover,
+        .nav-link:focus
+        {
+           /* background-color:darkslategrey;*/
+            padding-left: 2px;
+            padding-right: 2px;
+           /* margin-bottom: 5px;*/
+            /*position: fixed;
+            color: black;
+            border-top: 20px;*/
+           /* border: none;
+            outline: none;*/
+            cursor: pointer;
+        }
+        /*.btn-link::active {
+            background-color: aliceblue;
+        }
+        .btn-link:hover {
+            background-color: aliceblue;
+        }
+        .btn-link:focus {
+            background-color: aliceblue;
+        }*/
+       /* a.a {
+            background-color:cadetblue;
+            color: white;
+        }*/
+       /* #navbarSupportedContent > ul > li.active > a {
+            color: #5161ce;
+            background-color: transparent;
+            transition: all 0.7s;
+        }*/
+        /*#navbarSupportedContent {
+            overflow: hidden;
+            position: relative;
+        }*/
+        /**, ::after, ::before {
+            box-sizing: border-box;
+        }*/
+        /*body {
+            font-family: 'Roboto', sans-serif;
+        }*/
+        /**, ::after, ::before {
+            box-sizing: border-box;
+        }*/
+        /*nav li{
+            margin-right:5px;
+        }
+        .navbar-mainbg {
+            background-color: #5161ce;
+            padding: 0px;
+        }*/
+        header,body,footer{
+            background-color:lightcyan;
+           
         }
     </style>
     @Scripts.Render("~/bundles/jquery")

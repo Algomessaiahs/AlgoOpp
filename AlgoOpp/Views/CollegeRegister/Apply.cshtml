@@ -18,7 +18,7 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.NOTIFY_ID)
 
-        <div class="form-group  hidden">
+        <div class="form-group  visually-hidden">
             @Html.LabelFor(model => model.EST_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EST_ID, new { htmlAttributes = new { @class = "form-control", @type = "hidden" } })
@@ -26,7 +26,7 @@
             </div>
         </div>
 
-        <div class="form-group  hidden">
+        <div class="form-group  visually-hidden">
             @Html.LabelFor(model => model.EST_NAME, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.EST_NAME, new { htmlAttributes = new { @class = "form-control", @type = "hidden" } })
@@ -82,22 +82,6 @@
             </div>
         </div>
 
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.APPLIED_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.APPLIED_DATE, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.APPLIED_DATE, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.APP_STATUS, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.APP_STATUS, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.APP_STATUS, "", new { @class = "text-danger" })
-                </div>
-            </div>*@
-
         <div class="form-group">
             @Html.LabelFor(model => model.RECRUIT_ID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -108,15 +92,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Apply Here" class="btn btn-default" />
+                <input type="submit" value="Apply Here" class="btn btn-primary" style="margin-top:20px;"/>
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<a class="btn btn-secondary" style="margin-top:20px;" href="@Url.Action("Index", "StudentDetails")">Go Back</a>
+    
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

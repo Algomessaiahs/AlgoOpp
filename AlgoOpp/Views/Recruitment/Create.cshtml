@@ -5,108 +5,139 @@
     Layout = "~/Views/Shared/Layout_Company.cshtml";
 }
 
-<h2>Creat New Recruitment</h2>
+<h2>Create New Recruitment</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.POSITION, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.POSITION, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.POSITION, "", new { @class = "text-danger" })
+        <center>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.POSITION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.POSITION, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Designation" } })
+                    @Html.ValidationMessageFor(model => model.POSITION, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.JOB_LOCATION, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.JOB_LOCATION, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.JOB_LOCATION, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.JOB_LOCATION, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.JOB_LOCATION, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Job Location" } })
+                    @Html.ValidationMessageFor(model => model.JOB_LOCATION, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.SKILLS_REQ, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.SKILLS_REQ, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.SKILLS_REQ, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.SKILLS_REQ, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SKILLS_REQ, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Skills Required" } })
+                    @Html.ValidationMessageFor(model => model.SKILLS_REQ, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.JOB_DESC, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.JOB_DESC, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.JOB_DESC, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.JOB_DESC, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.JOB_DESC, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Job Description" } })
+                    @Html.ValidationMessageFor(model => model.JOB_DESC, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.REQ_CGPA, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.REQ_CGPA, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.REQ_CGPA, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.REQ_CGPA, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.REQ_CGPA, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "CGPA" } })
+                    @Html.ValidationMessageFor(model => model.REQ_CGPA, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-
-        @*<div class="form-group">
-            @Html.LabelFor(model => model.CREATED_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CREATED_DATE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CREATED_DATE, "", new { @class = "text-danger" })
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CREATED_BY, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CREATED_BY, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CREATED_BY, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MODIFIED_DATE, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MODIFIED_DATE, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MODIFIED_DATE, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MODIFIED_BY, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.MODIFIED_BY, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.MODIFIED_BY, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.EST_ID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.EST_ID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EST_ID, "", new { @class = "text-danger" })
-            </div>
-        </div>*@
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </div>
+            <br />
+            <p style="color: cadetblue; font-size: larger;">Back To List
+            <a style="text-decoration:none; color:white; font-size:larger; font:700;" 
+               href="@Url.Action("Index", "Recruitment")">Click Here...!</a></p>
+        </center>
     </div>
+
+
+<style>
+
+    .form-horizontal {
+        background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+        padding: 50px;
+        border-radius: 20px;
+        margin-top: 50px;
+        width: 450px;
+    }
+
+    h4 {
+        color: cadetblue;
+        text-align: center;
+        font-family: 'Bookman Old Style';
+    }
+
+    label {
+        color: cadetblue;
+        padding-left: 50px;
+    }
+
+    Input {
+        background: transparent;
+        border-bottom: 1px solid cadetblue;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        color: #fff;
+        font-size: 15px;
+        letter-spacing: 1px;
+        margin-top: 30px;
+        font-family: sans-serif;
+    }
+
+    .form-horizontal input:focus {
+        outline: none;
+    }
+
+    ::placeholder {
+        color: #fff;
+        font-family: Arial;
+    }
+
+    .icons a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+
+
+    .btn-primary {
+        /* float: left;*/
+        width: 200px;
+        height: fit-content;
+        padding: 10px;
+        font-weight: 700;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    hr {
+        width: 200px;
+        color: aliceblue;
+    }
+
+    .text {
+        color: palevioletred;
+    }
+</style>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }

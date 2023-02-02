@@ -28,3 +28,11 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+.navbar-expand-lg .navbar-nav .nav-link {
+    color: aliceblue;
+    text-decoration-color:none;
+    text-decoration:none;
+}
+h2 {
+    margin-top: 50px;
+}

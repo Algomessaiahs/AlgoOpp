@@ -4,46 +4,48 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/Layout_College.cshtml";
 }
-
+@Styles.Render("~/Content/Table")
 <h2>Student Details</h2>
-
-<button class="btn btn-default">
-    @Html.ActionLink("Create New", "Create")
-</button>
 <br />
-<hr />
+<a class="btn btn-primary" href="
+    @Url.Action("Create", "StudentDetails")">Create New Record
+</a>
+<br />
+<br />
 <table class="table">
     <tr>
-        <th>
+        <th id="th10">
             @Html.DisplayNameFor(model => model.NAME)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.EMAIL_ID)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.MOBILE)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.DEPARTMENT)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.YEAR)
         </th>
-        <th>
+        <th id="th1">
             @Html.DisplayNameFor(model => model.CGPA)
         </th>
-        <th class="hidden">
+        <th class="visually-hidden">
             @Html.DisplayNameFor(model => model.EST_NAME)
         </th>
-        <th class="hidden">
+        <th class="visually-hidden">
             @Html.DisplayNameFor(model => model.EST_ID)
         </th>
-        <th></th>
+        <th id="th1"></th>
+        <th id="th1"></th>
+        <th id="th11"></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr id="td">
             <td>
                 @Html.DisplayFor(modelItem => item.NAME)
             </td>
@@ -62,14 +64,14 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CGPA)
             </td>
-            <td class="hidden">
+            <td class="visually-hidden">
                 @Html.DisplayFor(modelItem => item.EST_NAME)
             </td>
-            <td class="hidden">
+            <td class="visually-hidden">
                 @Html.DisplayFor(modelItem => item.EST_ID)
             </td>
 
-            <td style="background-color:dimgrey">
+            @*<td>
                 <button class="btn btn-default">
                     @Html.ActionLink("Edit", "Edit", new { id = item.STUD_ID })
                 </button>
@@ -79,6 +81,18 @@
                 <button class="btn btn-default">
                     @Html.ActionLink("Delete", "Delete", new { id = item.STUD_ID })
                 </button>
+            </td>*@
+            <td id="td">
+
+                <a class="btn btn-primary" href="@Url.Action("Edit", "StudentDetails", new { id = item.STUD_ID })">Edit</a>
+            </td>
+            <td id="td">
+                <a class="btn btn-secondary" href="@Url.Action("Details", "StudentDetails", new { id = item.STUD_ID })">Details</a>
+            </td>
+            <td id="td">
+
+                <a class="btn btn-danger" href="@Url.Action("Delete", "StudentDetails", new { id = item.STUD_ID })">Delete</a>
+
             </td>
         </tr>
 
@@ -87,22 +101,7 @@
 </table>
 
 <style>
-    table {
-        border: solid 2px azure;
-        border-radius: 20px;
-    }
 
-    th {
-        border: solid 2px azure;
-        background-color: black;
-        color: aliceblue;
-    }
-
-    td {
-        border: solid 2px azure;
-        background-color: darkslategray;
-        color: azure;
-    }
 
     a:link {
         text-decoration: none;

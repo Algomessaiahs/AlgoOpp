@@ -5,73 +5,74 @@
     Layout = "~/Views/Shared/Layout_College.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Student Details</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Student Details</h4>
-        <hr />
+<div class="form-horizontal">
+    <center>
+       
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.STUD_ID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NAME, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.NAME, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.NAME, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Student Name" } })
                 @Html.ValidationMessageFor(model => model.NAME, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EMAIL_ID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.EMAIL_ID, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EMAIL_ID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.EMAIL_ID, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Email Id" } })
                 @Html.ValidationMessageFor(model => model.EMAIL_ID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.MOBILE, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.MOBILE, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.MOBILE, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.MOBILE, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Mobile Number" } })
                 @Html.ValidationMessageFor(model => model.MOBILE, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.DEPARTMENT, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.DEPARTMENT, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DEPARTMENT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DEPARTMENT, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Department" } })
                 @Html.ValidationMessageFor(model => model.DEPARTMENT, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.YEAR, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.YEAR, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.YEAR, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.YEAR, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "Year" } })
                 @Html.ValidationMessageFor(model => model.YEAR, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CGPA, htmlAttributes: new { @class = "control-label col-md-2" })
+            @*@Html.LabelFor(model => model.CGPA, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CGPA, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.CGPA, new { htmlAttributes = new { @class = "form-control", PlaceHolder = "CGPA" } })
                 @Html.ValidationMessageFor(model => model.CGPA, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </div>
-    </div>
+    </center>
+</div>
 }
 <style>
 
@@ -86,6 +87,7 @@
         color: cadetblue;
         text-align: center;
         font-family: 'Bookman Old Style';
+
     }
 
     Label {
@@ -102,7 +104,7 @@
         color: #fff;
         font-size: 15px;
         letter-spacing: 1px;
-        /* margin-top: 30px;*/
+         margin-top: 20px;
         font-family: sans-serif;
     }
 
@@ -133,10 +135,12 @@
         font-weight: 700;
         padding-left: 25px;
         padding-right: 25px;
+        margin-top:30px;
     }
 
     hr {
         width: 600px;
+        color:aliceblue;
     }
     /*  .btn {
             background-color:gold;
@@ -155,9 +159,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script><br />
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+ <a class="btn btn-secondary" style="margin-top:20px;" href="@Url.Action("Index", "StudentDetails")">Go Back</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

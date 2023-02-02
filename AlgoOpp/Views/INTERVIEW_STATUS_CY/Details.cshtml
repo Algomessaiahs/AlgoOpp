@@ -142,6 +142,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.INTERVIEW_ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.INTERVIEW_ID })*@
+    <a class="btn btn-secondary" style="margin-top:20px;" href="@Url.Action("Index", "INTERVIEW_STATUS_CY")">Back to List</a>
 </p>

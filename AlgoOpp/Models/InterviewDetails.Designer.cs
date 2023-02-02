@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\sowndaryan.v\Desktop\AlgoOPP++\AlgoOpp\Models\InterviewDetails.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\surendar.rajendiran\source\repos\AlgoOpp-2.0.0.1\AlgoOpp\Models\InterviewDetails.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
